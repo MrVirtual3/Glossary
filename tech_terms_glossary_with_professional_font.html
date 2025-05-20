@@ -1,0 +1,2880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tech Terms Glossary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #000;
+      color: #39ff14;
+      margin: 0;
+      padding: 40px;
+      background-image: radial-gradient(circle at top center, #1a1a1a, #000);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0ff;
+      text-shadow: 0 0 6px #0ff, 0 0 12px #0ff, 0 0 18px #0ff;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 14px;
+      margin: 20px 0;
+      border: 2px solid #39ff14;
+      border-radius: 8px;
+      background-color: #111;
+      color: #0ff;
+      font-size: 18px;
+      box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+    }
+
+    .glossary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .term {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #39ff14;
+      box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .term:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px #00ff00, 0 0 30px #39ff14;
+    }
+
+    .term strong {
+      font-size: 20px;
+      color: #00f5ff;
+      text-shadow: 0 0 6px #0ff, 0 0 12px #0ff, 0 0 18px #0ff;
+    }
+
+    .term em {
+      display: block;
+      margin-top: 8px;
+      color: #b2ffff;
+      font-style: normal;
+    }
+
+    .corner-horse {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Chess_nlt45.svg/240px-Chess_nlt45.svg.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 9999;
+      opacity: 0.9;
+    }
+
+    .top-left    { top: 10px; left: 10px; }
+    .top-right   { top: 10px; right: 10px; transform: scaleX(-1); }
+    .bottom-left { bottom: 10px; left: 10px; }
+    .bottom-right{ bottom: 10px; right: 10px; transform: scaleX(-1); }
+  </style>
+</head>
+<body>
+
+  <div class="corner-horse top-left"></div>
+  <div class="corner-horse top-right"></div>
+  <div class="corner-horse bottom-left"></div>
+  <div class="corner-horse bottom-right"></div>
+
+  <h1 style="font-family: 'Merriweather', serif;">Tech Terms Glossary</h1>
+<p style="
+  text-align: center;
+  font-size: 18px;
+  color: #66ffe0;
+  text-shadow: 0 0 4px #0ff;
+  margin-top: -10px;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+">
+  As students of 6th year, we are proud to present this Glossary of Technology Terms as part of our final academic contributions.
+  This project represents not only the knowledge we've gathered over the years, but also our desire to leave something meaningful for future generations of students.
+</p>
+
+  <nav style="text-align:center; margin-bottom: 20px;">
+    <select id="termSelect" style="
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: #000;
+      color: #0ff;
+      border: 2px solid #39ff14;
+      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      font-family: 'Roboto', sans-serif;
+    ">
+      <option value="">Jump to a term...</option>
+<option value="Algorithm">Algorithm</option>
+<option value="API (Application Programming Interface)">API (Application Programming Interface)</option>
+<option value="Archive">Archive</option>
+<option value="Blockchain">Blockchain</option>
+<option value="Bootstrap">Bootstrap</option>
+<option value="Bytes">Bytes</option>
+<option value="Cache">Cache</option>
+<option value="Cloud">Cloud</option>
+<option value="Codec">Codec</option>
+<option value="Compiler">Compiler</option>
+<option value="Cost-benefit">Cost-benefit</option>
+<option value="CPU (Central Processing Unit)">CPU (Central Processing Unit)</option>
+<option value="Rift">Rift</option>
+<option value="Cryptography">Cryptography</option>
+<option value="Data Mining">Data Mining</option>
+<option value="Data Warehouse">Data Warehouse</option>
+<option value="Debugging">Debugging</option>
+<option value="DevOps">DevOps</option>
+<option value="Drive">Drive</option>
+<option value="Firmware">Firmware</option>
+<option value="Firewall">Firewall</option>
+<option value="Gateway">Gateway</option>
+<option value="GPU (Graphics Processing Unit)">GPU (Graphics Processing Unit)</option>
+<option value="Hardware">Hardware</option>
+<option value="Hospedaje">Hospedaje</option>
+<option value="Hyperlink">Hyperlink</option>
+<option value="IoT (Internet of Things)">IoT (Internet of Things)</option>
+<option value="IPsec">IPsec</option>
+<option value="JavaScript">JavaScript</option>
+<option value="Core">Core</option>
+<option value="Laser">Laser</option>
+<option value="Load Balancer">Load Balancer</option>
+<option value="Machine Learning">Machine Learning</option>
+<option value="Malware">Malware</option>
+<option value="Middleware">Middleware</option>
+<option value="Modem">Modem</option>
+<option value="Network">Network</option>
+<option value="Node">Node</option>
+<option value="Object-oriented">Object-oriented</option>
+<option value="Operating System">Operating System</option>
+<option value="Package">Package</option>
+<option value="Payload">Payload</option>
+<option value="Phishing (Phishing)">Phishing (Phishing)</option>
+<option value="Pixel">Pixel</option>
+<option value="Complement">Complement</option>
+<option value="Attorney-in-fact">Attorney-in-fact</option>
+<option value="QR Code">QR Code</option>
+<option value="Tail">Tail</option>
+<option value="RAM (Random Access Memory)">RAM (Random Access Memory)</option>
+<option value="Repository">Repository</option>
+<option value="SaaS (Software as a Service)">SaaS (Software as a Service)</option>
+<option value="Sandbox">Sandbox</option>
+<option value="Server">Server</option>
+<option value="Shader">Shader</option>
+<option value="Signal">Signal</option>
+<option value="Smartphone">Smartphone</option>
+<option value="SMTP (Simple Mail Transfer Protocol)">SMTP (Simple Mail Transfer Protocol)</option>
+<option value="Snapchat">Snapchat</option>
+<option value="Software">Software</option>
+<option value="Spam">Spam</option>
+<option value="Spectrum">Spectrum</option>
+<option value="SQL">SQL</option>
+<option value="Storage">Storage</option>
+<option value="Syntax">Syntax</option>
+<option value="Token">Token</option>
+<option value="Tunneling">Tunneling</option>
+<option value="Unbuffered">Unbuffered</option>
+<option value="URL (Uniform Resource Locator)">URL (Uniform Resource Locator)</option>
+<option value="USB (Universal Serial Bus)">USB (Universal Serial Bus)</option>
+<option value="User Interface">User Interface</option>
+<option value="Virtualization">Virtualization</option>
+<option value="VPN (Virtual Private Network)">VPN (Virtual Private Network)</option>
+<option value="Virus">Virus</option>
+<option value="Webcam">Webcam</option>
+<option value="Website">Website</option>
+<option value="Wi-Fi">Wi-Fi</option>
+<option value="Wireless">Wireless</option>
+<option value="XSS (Cross-Site Scripting)">XSS (Cross-Site Scripting)</option>
+<option value="XML (eXtensible Markup Language)">XML (eXtensible Markup Language)</option>
+<option value="Day Zero">Day Zero</option>
+<option value="Kernel Panic">Kernel Panic</option>
+<option value="Latency">Latency</option>
+<option value="Registration">Registration</option>
+<option value="Malwarebytes">Malwarebytes</option>
+<option value="Manifesto">Manifesto</option>
+<option value="Metadata">Metadata</option>
+<option value="Microcontroller">Microcontroller</option>
+<option value="Middleware">Middleware</option>
+<option value="Multitasking">Multitasking</option>
+<option value="NAT (Network Address Translation)">NAT (Network Address Translation)</option>
+<option value="Open Source">Open Source</option>
+<option value="Patch">Patch</option>
+<option value="Ping">Ping</option>
+<option value="Protocol">Protocol</option>
+<option value="Protocol Stack">Protocol Stack</option>
+<option value="Quantum Computing">Quantum Computing</option>
+<option value="RAM Disk">RAM Disk</option>
+<option value="Recursion">Recursion</option>
+<option value="Repository">Repository</option>
+<option value="Response Time">Response Time</option>
+<option value="Scalability">Scalability</option>
+<option value="Script">Script</option>
+<option value="Traffic light">Traffic light</option>
+<option value="Server Farm">Server Farm</option>
+<option value="Session">Session</option>
+<option value="Shading Language">Shading Language</option>
+<option value="Shell">Shell</option>
+<option value="SDK (Software Development Kit)">SDK (Software Development Kit)</option>
+<option value="Traffic light (duplicate, so it is skipped)">Traffic light (duplicate, so it is skipped)</option>
+<option value="Signage">Signage</option>
+<option value="Syntax Highlighting">Syntax Highlighting</option>
+<option value="TFTP (Trivial File Transfer Protocol)">TFTP (Trivial File Transfer Protocol)</option>
+<option value="Tokenization">Tokenization</option>
+<option value="Transcoder">Transcoder</option>
+<option value="Trace Route">Trace Route</option>
+<option value="Performance">Performance</option>
+<option value="Token Ring Network">Token Ring Network</option>
+<option value="Tree Structure">Tree Structure</option>
+<option value="Troubleshooting">Troubleshooting</option>
+<option value="Unicode">Unicode</option>
+<option value="User Agent">User Agent</option>
+<option value="Puerto USB">Puerto USB</option>
+<option value="URL Encoding">URL Encoding</option>
+<option value="Utility Software">Utility Software</option>
+<option value="Virtual Machine">Virtual Machine</option>
+<option value="Web Crawler">Web Crawler</option>
+<option value="Web Server">Web Server</option>
+<option value="White Hat">White Hat</option>
+<option value="Widget">Widget</option>
+<option value="Wi-Fi Access Point">Wi-Fi Access Point</option>
+<option value="Wireless Local Area Network (WLAN)">Wireless Local Area Network (WLAN)</option>
+<option value="Wi-Fi Router">Wi-Fi Router</option>
+<option value="Workflow">Workflow</option>
+<option value="Widget Toolkit">Widget Toolkit</option>
+<option value="Web Application">Web Application</option>
+<option value="Web Hosting">Web Hosting</option>
+<option value="Web Development">Web Development</option>
+<option value="Web Design">Web Design</option>
+<option value="Socket web">Socket web</option>
+<option value="Wide Area Network (WAN)">Wide Area Network (WAN)</option>
+<option value="Wrapping">Wrapping</option>
+<option value="Widget (duplicate, so it jumps)">Widget (duplicate, so it jumps)</option>
+<option value="Workflow Automation">Workflow Automation</option>
+<option value="Worm">Worm</option>
+<option value="WordPress">WordPress</option>
+<option value="Wi-Fi Protected Access (WPA)">Wi-Fi Protected Access (WPA)</option>
+<option value="WAN Link">WAN Link</option>
+<option value="Web API">Web API</option>
+<option value="Word Processing Software">Word Processing Software</option>
+<option value="Wi-Fi Extender">Wi-Fi Extender</option>
+<option value="Web Cache">Web Cache</option>
+<option value="Proxy web">Proxy web</option>
+<option value="Wi-Fi antenna">Wi-Fi antenna</option>
+<option value="Workflow Management">Workflow Management</option>
+<option value="Web Server Registration">Web Server Registration</option>
+<option value="Web scraping">Web scraping</option>
+<option value="Web Crawl Bot">Web Crawl Bot</option>
+<option value="Web Portal">Web Portal</option>
+<option value="Web-based">Web-based</option>
+<option value="Wireless Sensor Network">Wireless Sensor Network</option>
+<option value="Wi-Fi Module">Wi-Fi Module</option>
+<option value="Web Analytics">Web Analytics</option>
+<option value="Web Hosting Provider">Web Hosting Provider</option>
+<option value="Site Map">Site Map</option>
+<option value="Webmail">Webmail</option>
+<option value="Wi-Fi Security">Wi-Fi Security</option>
+<option value="Wide Area Network (WAN)">Wide Area Network (WAN)</option>
+<option value="Wireless Fidelity (Wi-Fi)">Wireless Fidelity (Wi-Fi)</option>
+<option value="Web Syndication">Web Syndication</option>
+<option value="Web Hosting Service">Web Hosting Service</option>
+<option value="Web-based application">Web-based application</option>
+<option value="Web Browser Engine">Web Browser Engine</option>
+<option value="Wi-Fi Connection">Wi-Fi Connection</option>
+<option value="WEP (Wired Equivalent Privacy)">WEP (Wired Equivalent Privacy)</option>
+<option value="Whitelist">Whitelist</option>
+<option value="Web Cache">Web Cache</option>
+<option value="Proxy web">Proxy web</option>
+<option value="Wi-Fi antenna">Wi-Fi antenna</option>
+<option value="Workflow Management">Workflow Management</option>
+<option value="Web Server Registration">Web Server Registration</option>
+<option value="Web scraping">Web scraping</option>
+<option value="Web Crawl Bot">Web Crawl Bot</option>
+<option value="Web Portal">Web Portal</option>
+<option value="Web-based">Web-based</option>
+<option value="Wireless Sensor Network">Wireless Sensor Network</option>
+<option value="Wi-Fi Module">Wi-Fi Module</option>
+<option value="Web Analytics">Web Analytics</option>
+<option value="Web Hosting Provider">Web Hosting Provider</option>
+<option value="Site Map">Site Map</option>
+<option value="Webmail">Webmail</option>
+<option value="Wi-Fi Security">Wi-Fi Security</option>
+<option value="Wide Area Network (WAN)">Wide Area Network (WAN)</option>
+<option value="Wireless Fidelity (Wi-Fi)">Wireless Fidelity (Wi-Fi)</option>
+<option value="Web Syndication">Web Syndication</option>
+<option value="Web Hosting Service">Web Hosting Service</option>
+<option value="Web-based application">Web-based application</option>
+<option value="Web Browser Engine">Web Browser Engine</option>
+<option value="Wi-Fi Connection">Wi-Fi Connection</option>
+<option value="WEP (Wired Equivalent Privacy)">WEP (Wired Equivalent Privacy)</option>
+<option value="Whitelist">Whitelist</option>
+<option value="Web Application Firewall (WAF)">Web Application Firewall (WAF)</option>
+<option value="Wi-Fi Access Point Login">Wi-Fi Access Point Login</option>
+<option value="WYSIWYG (What You See Is What You Get)">WYSIWYG (What You See Is What You Get)</option>
+<option value="WebRTC">WebRTC</option>
+<option value="Web Evangelist">Web Evangelist</option>
+<option value="Web Partitioning">Web Partitioning</option>
+<option value="Widespread Network Attack">Widespread Network Attack</option>
+<option value="Wi-Fi Signal Booster">Wi-Fi Signal Booster</option>
+<option value="Web Accessibility">Web Accessibility</option>
+<option value="Web Portfolio">Web Portfolio</option>
+<option value="Web Hosting Plan">Web Hosting Plan</option>
+<option value="Wireless Access Point (WAP)">Wireless Access Point (WAP)</option>
+<option value="Wi-Fi Interference">Wi-Fi Interference</option>
+<option value="Web Server Virtualization">Web Server Virtualization</option>
+<option value="Web-based email client">Web-based email client</option>
+<option value="Wi-Fi mesh network">Wi-Fi mesh network</option>
+<option value="WEP crack">WEP crack</option>
+<option value="Web Metrics">Web Metrics</option>
+<option value="Wireless Communication Protocol">Wireless Communication Protocol</option>
+<option value="Web Service">Web Service</option>
+<option value="Write Cache">Write Cache</option>
+<option value="Wi-Fi 6">Wi-Fi 6</option>
+<option value="World Wide Web (WWW)">World Wide Web (WWW)</option>
+<option value="Wavelength">Wavelength</option>
+<option value="Web Maintenance">Web Maintenance</option>
+<option value="Wifi Access Point Management">Wifi Access Point Management</option>
+<option value="Web Analytics Tools">Web Analytics Tools</option>
+<option value="Wi-Fi Device">Wi-Fi Device</option>
+<option value="Archive Website">Archive Website</option>
+<option value="Website Optimization">Website Optimization</option>
+<option value="Web Licenses">Web Licenses</option>
+<option value="Wireless Charging">Wireless Charging</option>
+<option value="Wireless Network Security">Wireless Network Security</option>
+<option value="Web Hosting Control Panel">Web Hosting Control Panel</option>
+<option value="Web Development Framework">Web Development Framework</option>
+<option value="Wi-Fi Booster">Wi-Fi Booster</option>
+<option value="Web Interface Design">Web Interface Design</option>
+<option value="Web Password Management">Web Password Management</option>
+<option value="Wavelength Modulation">Wavelength Modulation</option>
+<option value="Wi-Fi Access Security">Wi-Fi Access Security</option>
+<option value="Web Traffic Analysis">Web Traffic Analysis</option>
+<option value="WLAN Security Protocols">WLAN Security Protocols</option>
+<option value="Web Content Management System (CMS)">Web Content Management System (CMS)</option>
+<option value="Wireless Mesh Topology">Wireless Mesh Topology</option>
+<option value="Web Hosting Uptime">Web Hosting Uptime</option>
+<option value="WPS (Wi-Fi Protected Settings)">WPS (Wi-Fi Protected Settings)</option>
+<option value="Web Content Filtering">Web Content Filtering</option>
+<option value="Wi-Fi Network Adapter">Wi-Fi Network Adapter</option>
+<option value="Webpage Loading Speed">Webpage Loading Speed</option>
+<option value="WEP Security Vulnerability">WEP Security Vulnerability</option>
+<option value="Web Hosting Provider">Web Hosting Provider</option>
+<option value="Web Performance Optimization">Web Performance Optimization</option>
+<option value="Wireless Channel">Wireless Channel</option>
+<option value="Web Hosting Control Panel">Web Hosting Control Panel</option>
+<option value="Broadband network">Broadband network</option>
+<option value="Wi-Fi Authentication">Wi-Fi Authentication</option>
+<option value="Web Browser Security">Web Browser Security</option>
+<option value="Web Hosting Bandwidth">Web Hosting Bandwidth</option>
+<option value="Widespread malware infection">Widespread malware infection</option>
+<option value="Wi-Fi Password">Wi-Fi Password</option>
+<option value="Web Code Optimization">Web Code Optimization</option>
+<option value="Wireless Bandwidth Management">Wireless Bandwidth Management</option>
+<option value="Compliance with web regulations">Compliance with web regulations</option>
+<option value="Web Content Delivery Network (CDN)">Web Content Delivery Network (CDN)</option>
+<option value="Wi-Fi Access Point Security">Wi-Fi Access Point Security</option>
+<option value="Web Hosting Migration">Web Hosting Migration</option>
+<option value="WAP (Wireless Access Point)">WAP (Wireless Access Point)</option>
+<option value="Web Responsiveness">Web Responsiveness</option>
+<option value="Wireless Network Topology">Wireless Network Topology</option>
+<option value="Web accessibility standards">Web accessibility standards</option>
+<option value="WEP Security Protocol">WEP Security Protocol</option>
+<option value="Web Traffic Management">Web Traffic Management</option>
+<option value="WState (wireless status)">WState (wireless status)</option>
+<option value="Web Backend Development">Web Backend Development</option>
+<option value="Wi-Fi Mesh Extenders">Wi-Fi Mesh Extenders</option>
+<option value="Web Hosting Uptime Monitoring">Web Hosting Uptime Monitoring</option>
+<option value="Structuring of web pages">Structuring of web pages</option>
+<option value="Wi-Fi Frequency Bands">Wi-Fi Frequency Bands</option>
+<option value="Syndication of web content">Syndication of web content</option>
+<option value="Wi-Fi Certification">Wi-Fi Certification</option>
+<option value="Web Push Notifications">Web Push Notifications</option>
+<option value="Wireless Access Security Protocols">Wireless Access Security Protocols</option>
+<option value="Web Hosting Security">Web Hosting Security</option>
+<option value="Web Application Security Testing">Web Application Security Testing</option>
+<option value="Web Server Configuration">Web Server Configuration</option>
+<option value="Wi-Fi Channel Selection">Wi-Fi Channel Selection</option>
+<option value="Web Page Caching">Web Page Caching</option>
+<option value="Wireless Device Management">Wireless Device Management</option>
+<option value="Web Login Security">Web Login Security</option>
+<option value="Editor web WYSIWYG">Editor web WYSIWYG</option>
+<option value="Optimizing Web Content for SEO">Optimizing Web Content for SEO</option>
+<option value="Wireless Site Inspection">Wireless Site Inspection</option>
+<option value="Web Server Load Balancing">Web Server Load Balancing</option>
+<option value="Troubleshooting Wi-Fi Connection">Troubleshooting Wi-Fi Connection</option>
+<option value="Web Content Management Systems (CMS)">Web Content Management Systems (CMS)</option>
+<option value="Wireless Signal Interference Mitigation">Wireless Signal Interference Mitigation</option>
+<option value="Web Server Security Policies">Web Server Security Policies</option>
+<option value="WEP vs. WPA Security">WEP vs. WPA Security</option>
+<option value="Web Application Firewall (WAF) Implementation">Web Application Firewall (WAF) Implementation</option>
+<option value="Web Server Hosting Options">Web Server Hosting Options</option>
+<option value="Web Security Incident Response">Web Security Incident Response</option>
+<option value="Wireless encryption standards">Wireless encryption standards</option>
+<option value="Web infrastructure">Web infrastructure</option>
+<option value="Web Traffic Analysis Tools">Web Traffic Analysis Tools</option>
+<option value="Wi-Fi Signal Expansion">Wi-Fi Signal Expansion</option>
+<option value="Web Hosting SLA (Service Level Agreement)">Web Hosting SLA (Service Level Agreement)</option>
+<option value="Wireless Device Protocols">Wireless Device Protocols</option>
+<option value="Web Content Personalization">Web Content Personalization</option>
+<option value="Web Server Virtualization Technology">Web Server Virtualization Technology</option>
+<option value="Wi-Fi Spectrum Management">Wi-Fi Spectrum Management</option>
+<option value="Web Accessibility Testing Tools">Web Accessibility Testing Tools</option>
+<option value="Deployment of wireless mesh networks">Deployment of wireless mesh networks</option>
+<option value="Web Server Log Analysis Techniques">Web Server Log Analysis Techniques</option>
+<option value="Wi-Fi Signal Quality Metrics">Wi-Fi Signal Quality Metrics</option>
+<option value="Web Hosting Cost Estimate">Web Hosting Cost Estimate</option>
+<option value="Wireless Intrusion Detection System (WIDS)">Wireless Intrusion Detection System (WIDS)</option>
+<option value="Tuning Web Server Performance">Tuning Web Server Performance</option>
+<option value="A/B testing of the website">A/B testing of the website</option>
+<option value="Wi-Fi Device Troubleshooting Tools">Wi-Fi Device Troubleshooting Tools</option>
+<option value="Web API Security Best Practices">Web API Security Best Practices</option>
+<option value="Wireless Network Coverage Planning">Wireless Network Coverage Planning</option>
+<option value="Web Hosting Scalability Solutions">Web Hosting Scalability Solutions</option>
+<option value="WAP (Wireless Application Protocol)">WAP (Wireless Application Protocol)</option>
+<option value="Process of updating the content of the website">Process of updating the content of the website</option>
+<option value="Web Hosting Backup Solutions">Web Hosting Backup Solutions</option>
+<option value="Wi-Fi Device Firmware">Wi-Fi Device Firmware</option>
+<option value="Web Server Security Patches">Web Server Security Patches</option>
+<option value="Limitation of web hosting bandwidth">Limitation of web hosting bandwidth</option>
+<option value="Wireless Channel Interference Mitigation">Wireless Channel Interference Mitigation</option>
+<option value="Web-based dashboards">Web-based dashboards</option>
+<option value="WEP Security Vulnerability Exploits">WEP Security Vulnerability Exploits</option>
+<option value="Web Security Best Practices">Web Security Best Practices</option>
+<option value="Wi-Fi Network Segmentation">Wi-Fi Network Segmentation</option>
+<option value="Web Hosting Account Management">Web Hosting Account Management</option>
+<option value="Wireless Spectrum Analysis Tools">Wireless Spectrum Analysis Tools</option>
+<option value="Web Server Load Balancing Techniques">Web Server Load Balancing Techniques</option>
+<option value="Wi-Fi Channel Bandwidth Options">Wi-Fi Channel Bandwidth Options</option>
+<option value="Web Performance Monitoring Tools">Web Performance Monitoring Tools</option>
+<option value="WEP Cracking Tools">WEP Cracking Tools</option>
+<option value="Reducing Web Content Delivery Latency">Reducing Web Content Delivery Latency</option>
+<option value="Wireless Security Authentication Protocols">Wireless Security Authentication Protocols</option>
+<option value="Web Server Virtualization Management">Web Server Virtualization Management</option>
+<option value="Wi-Fi Access Point Bridge">Wi-Fi Access Point Bridge</option>
+<option value="Web Security Incident Analysis">Web Security Incident Analysis</option>
+
+    </select>
+  </nav>
+
+  <input type="text" id="searchInput" placeholder="Search terms...">
+
+  <div class="glossary" id="glossaryList">
+
+    <div class="term">
+      <strong>Algorithm</strong>
+      <em><strong>Definition:</strong> A set of step-by-step instructions for solving a problem or performing a task.
+Example: The search engine uses a complex algorithm to rank websites.</em>
+      <em><strong>Example:</strong> In modern IT environments, algorithm plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>API (Application Programming Interface)</strong>
+      <em><strong>Definition:</strong> A set of rules that allow different software applications to communicate with each other.
+Example: Twitter provides an API for developers to access your data.</em>
+      <em><strong>Example:</strong> Securing your api (application programming interface) is essential to avoid exposing endpoints to malicious users.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Archive</strong>
+      <em><strong>Definition:</strong> A digital document stored on a computer.
+Example: I saved the report as a PDF file.</em>
+      <em><strong>Example:</strong> In modern IT environments, archive plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Blockchain</strong>
+      <em><strong>Definition:</strong> A decentralized ledger technology used to record transactions on many computers securely.
+Example: Cryptocurrencies are based on blockchain technology.</em>
+      <em><strong>Example:</strong> In modern IT environments, blockchain plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Bootstrap</strong>
+      <em><strong>Definition:</strong> The process of starting up a computer or device.
+Example: It takes a few minutes for your computer to boot up after you turn it on.</em>
+      <em><strong>Example:</strong> In modern IT environments, bootstrap plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Bytes</strong>
+      <em><strong>Definition:</strong> Basic units of data storage, which usually consist of 8 bits.
+Example: A text file may be only a few kilobytes in size, which is thousands of bytes.</em>
+      <em><strong>Example:</strong> In modern IT environments, bytes plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Cache</strong>
+      <em><strong>Definition:</strong> Temporary storage that helps speed up data recovery.
+Example: The browser cache stores images and files to load web pages faster.</em>
+      <em><strong>Example:</strong> In modern IT environments, cache plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Cloud</strong>
+      <em><strong>Definition:</strong> Remote servers used to store, manage, and process online data.
+Example: I save my documents in the cloud so I can access them from anywhere.</em>
+      <em><strong>Example:</strong> Cloud is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Codec</strong>
+      <em><strong>Definition:</strong> A device or program that compresses and decompresses digital media files.
+Example: The video used an H.264 codec for efficient streaming.</em>
+      <em><strong>Example:</strong> In modern IT environments, codec plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Compiler</strong>
+      <em><strong>Definition:</strong> A program that translates source code into executable machine code.
+Example: The C++ compiler converts your code into a program that your computer can run.</em>
+      <em><strong>Example:</strong> In modern IT environments, compiler plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Cost-benefit</strong>
+      <em><strong>Definition:</strong> Analysis that compares the costs and advantages of a decision or project.
+Example: We perform a cost-benefit analysis before launching the new software.</em>
+      <em><strong>Example:</strong> In modern IT environments, cost-benefit plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>CPU (Central Processing Unit)</strong>
+      <em><strong>Definition:</strong> The main chip in a computer responsible for processing instructions.
+Example: A faster CPU improves the overall speed of your computer.</em>
+      <em><strong>Example:</strong> In modern IT environments, cpu (central processing unit) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Rift</strong>
+      <em><strong>Definition:</strong> Illegally entering software or circumventing security.
+Example: Some hackers try to crack the encryption of the software.</em>
+      <em><strong>Example:</strong> Rift helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Cryptography</strong>
+      <em><strong>Definition:</strong> The practice of secure communication through coding.
+Example: Cryptography is essential for protecting sensitive information online.</em>
+      <em><strong>Example:</strong> In modern IT environments, cryptography plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Data Mining</strong>
+      <em><strong>Definition:</strong> The process of analyzing large data sets to discover patterns.
+Example: Companies use data mining to understand customer preferences.</em>
+      <em><strong>Example:</strong> In modern IT environments, data mining plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Data Warehouse</strong>
+      <em><strong>Definition:</strong> A large storage system for consolidating and analyzing data from different sources.
+Example: The company's data warehouse stores all sales and customer data.</em>
+      <em><strong>Example:</strong> In modern IT environments, data warehouse plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Debugging</strong>
+      <em><strong>Definition:</strong> The process of finding and fixing bugs in software code.
+Example: The developer spent hours debugging the app.</em>
+      <em><strong>Example:</strong> In modern IT environments, debugging plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>DevOps</strong>
+      <em><strong>Definition:</strong> A set of practices that combine software development and IT operations for faster development cycles.
+Example: DevOps helps teams deploy updates more frequently.</em>
+      <em><strong>Example:</strong> In modern IT environments, devops plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Drive</strong>
+      <em><strong>Definition:</strong> A storage device used to store digital data.
+Example: I saved the presentation to my external drive.</em>
+      <em><strong>Example:</strong> In modern IT environments, drive plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Firmware</strong>
+      <em><strong>Definition:</strong> Software programmed into hardware devices to control their functions.
+Example: The router's firmware was updated to address security issues.</em>
+      <em><strong>Example:</strong> Firmware helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Firewall</strong>
+      <em><strong>Definition:</strong> A security system that monitors and controls incoming and outgoing network traffic.
+Example: The firewall blocks unauthorized access to the network.</em>
+      <em><strong>Example:</strong> Firewall helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Gateway</strong>
+      <em><strong>Definition:</strong> A device that connects different networks, often translating protocols.
+Example: The router acts as a gateway between your home network and the Internet.</em>
+      <em><strong>Example:</strong> In modern IT environments, gateway plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>GPU (Graphics Processing Unit)</strong>
+      <em><strong>Definition:</strong> A specialized processor for rendering images and videos.
+Example: A high-end GPU is essential for gaming and 3D rendering.</em>
+      <em><strong>Example:</strong> In modern IT environments, gpu (graphics processing unit) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Hardware</strong>
+      <em><strong>Definition:</strong> The physical components of a computer system.
+Example: The hardware includes the CPU, memory, and storage devices.</em>
+      <em><strong>Example:</strong> In modern IT environments, hardware plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Hospedaje</strong>
+      <em><strong>Definition:</strong> To provide space on a server to store and serve websites or services.
+Example: They are using cloud hosting for their website.</em>
+      <em><strong>Example:</strong> Hospedaje is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Hyperlink</strong>
+      <em><strong>Definition:</strong> A clickable link that connects one web page or document to another.
+Example: When I clicked on the hyperlink, I was taken to the company's homepage.</em>
+      <em><strong>Example:</strong> In modern IT environments, hyperlink plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>IoT (Internet of Things)</strong>
+      <em><strong>Definition:</strong> A network of physical devices connected to the internet, capable of collecting and exchanging data.
+Example: Smart thermostats are part of the IoT.</em>
+      <em><strong>Example:</strong> In modern IT environments, iot (internet of things) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>IPsec</strong>
+      <em><strong>Definition:</strong> A set of protocols for securing IP communications by authenticating and encrypting each IP packet.
+Example: VPNs often use IPsec for secure connections.</em>
+      <em><strong>Example:</strong> In modern IT environments, ipsec plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>JavaScript</strong>
+      <em><strong>Definition:</strong> Programming language used to create interactive elements on websites.
+Example: The web page is dynamically updated thanks to JavaScript.</em>
+      <em><strong>Example:</strong> In modern IT environments, javascript plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Core</strong>
+      <em><strong>Definition:</strong> The core component of an operating system that manages hardware resources.
+Example: The kernel controls how the CPU communicates with the hardware.</em>
+      <em><strong>Example:</strong> In modern IT environments, core plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Laser</strong>
+      <em><strong>Definition:</strong> A device that emits a highly focused, coherent beam of light.
+Example: Laser printers produce crisp text and images.</em>
+      <em><strong>Example:</strong> In modern IT environments, laser plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Load Balancer</strong>
+      <em><strong>Definition:</strong> A system that distributes incoming network traffic across multiple servers for optimal performance.
+Example: The website uses a load balancer to handle high traffic.</em>
+      <em><strong>Example:</strong> Load Balancer is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Machine Learning</strong>
+      <em><strong>Definition:</strong> A subset of AI in which computers learn from data without being explicitly programmed.
+Example: Spam filters are enhanced by machine learning algorithms.</em>
+      <em><strong>Example:</strong> In modern IT environments, machine learning plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Malware</strong>
+      <em><strong>Definition:</strong> Malicious software designed to damage or disrupt systems.
+Example: You must run an antivirus to detect malware.</em>
+      <em><strong>Example:</strong> In modern IT environments, malware plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Middleware</strong>
+      <em><strong>Definition:</strong> Software that connects different applications or systems to enable communication.
+Example: Middleware helps integrate the company's existing systems.</em>
+      <em><strong>Example:</strong> In modern IT environments, middleware plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Modem</strong>
+      <em><strong>Definition:</strong> A device that converts digital data into signals for transmission over telephone or cable lines.
+Example: The modem connects your home to the Internet.</em>
+      <em><strong>Example:</strong> In modern IT environments, modem plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Network</strong>
+      <em><strong>Definition:</strong> A set of computers and devices connected to share data and resources.
+Example: Our network of offices allows file sharing between employees.</em>
+      <em><strong>Example:</strong> In modern IT environments, network plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Node</strong>
+      <em><strong>Definition:</strong> A point on a network where data can be created, received, or transmitted.
+Example: Each computer in the network is a node.</em>
+      <em><strong>Example:</strong> In modern IT environments, node plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Object-oriented</strong>
+      <em><strong>Definition:</strong> Programming paradigm based on objects that contain data and methods.
+Example: Java and C++ are object-oriented languages.</em>
+      <em><strong>Example:</strong> In modern IT environments, object-oriented plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Operating System</strong>
+      <em><strong>Definition:</strong> Software that manages the hardware and software resources of a device.
+Example: Windows and macOS are popular operating systems.</em>
+      <em><strong>Example:</strong> In modern IT environments, operating system plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Package</strong>
+      <em><strong>Definition:</strong> A formatted block of data sent over a network.
+Example: The data was divided into small packets for transmission.</em>
+      <em><strong>Example:</strong> In modern IT environments, package plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Payload</strong>
+      <em><strong>Definition:</strong> The part of the transmitted data that contains actual information, excluding headers or metadata.
+Example: The payload contains the message you sent.</em>
+      <em><strong>Example:</strong> In modern IT environments, payload plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Phishing (Phishing)</strong>
+      <em><strong>Definition:</strong> Fraudulent attempt to obtain sensitive information through fake emails or websites.
+Example: Be wary of phishing emails that ask for passwords.</em>
+      <em><strong>Example:</strong> In modern IT environments, phishing (phishing) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Pixel</strong>
+      <em><strong>Definition:</strong> The smallest unit of a digital image.
+Example: The resolution of the image is 1920 by 1080 pixels.</em>
+      <em><strong>Example:</strong> In modern IT environments, pixel plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Complement</strong>
+      <em><strong>Definition:</strong> A software component that adds specific features to a program.
+Example: I installed an ad-blocking plugin in my browser.</em>
+      <em><strong>Example:</strong> In modern IT environments, complement plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Attorney-in-fact</strong>
+      <em><strong>Definition:</strong> An intermediary server that handles requests between a client and a destination server.
+Example: Using a proxy helps anonymize your browsing.</em>
+      <em><strong>Example:</strong> Attorney-in-fact is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>QR Code</strong>
+      <em><strong>Definition:</strong> A matrix barcode that stores data, easily scanned with a smartphone.
+Example: Scan the QR code to access the website.</em>
+      <em><strong>Example:</strong> In modern IT environments, qr code plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Tail</strong>
+      <em><strong>Definition:</strong> A data structure that stores items in order, first in, first out.
+Example: Print jobs are held in a queue until the printer is ready.</em>
+      <em><strong>Example:</strong> In modern IT environments, tail plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>RAM (Random Access Memory)</strong>
+      <em><strong>Definition:</strong> Memory used to temporarily store data that the processor needs quickly.
+Example: More RAM helps your computer run multiple programs smoothly.</em>
+      <em><strong>Example:</strong> In modern IT environments, ram (random access memory) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Repository</strong>
+      <em><strong>Definition:</strong> A storage location for software, data, or code, which is often used in version control.
+Example: Your team submitted your code to a Git repository.</em>
+      <em><strong>Example:</strong> In modern IT environments, repository plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>SaaS (Software as a Service)</strong>
+      <em><strong>Definition:</strong> Software  delivery model in which applications are hosted by a vendor and accessed online.
+Example: Google Workspace is a popular SaaS platform.</em>
+      <em><strong>Example:</strong> In modern IT environments, saas (software as a service) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Sandbox</strong>
+      <em><strong>Definition:</strong> An isolated test environment to run software without affecting the main system.
+Example: Developers test new code in a sandbox.</em>
+      <em><strong>Example:</strong> In modern IT environments, sandbox plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Server</strong>
+      <em><strong>Definition:</strong> A computer or system that provides resources or services to other computers over a network.
+Example: The web server hosts the website.</em>
+      <em><strong>Example:</strong> Server is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Shader</strong>
+      <em><strong>Definition:</strong> A program used in computer graphics to determine how surfaces appear in rendering.
+Example: Shaders enhance visual effects in video games.</em>
+      <em><strong>Example:</strong> In modern IT environments, shader plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Signal</strong>
+      <em><strong>Definition:</strong> Transmission of data or information between devices.
+Example: Wi-Fi signals allow wireless access to the Internet.</em>
+      <em><strong>Example:</strong> Signal allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Smartphone</strong>
+      <em><strong>Definition:</strong> A mobile device with advanced features beyond calling, including internet access and apps.
+Example: I use my smartphone to check emails and social media.</em>
+      <em><strong>Example:</strong> In modern IT environments, smartphone plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>SMTP (Simple Mail Transfer Protocol)</strong>
+      <em><strong>Definition:</strong> Protocol used to send emails over networks.
+Example: Your email client uses SMTP to send messages.</em>
+      <em><strong>Example:</strong> In modern IT environments, smtp (simple mail transfer protocol) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Snapchat</strong>
+      <em><strong>Definition:</strong> A multimedia messaging app famous for its ephemeral content.
+Example: You sent a photo on Snapchat.</em>
+      <em><strong>Example:</strong> In modern IT environments, snapchat plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Software</strong>
+      <em><strong>Definition:</strong> Programs and operational information used by a computer.
+Example: Antivirus software protects your system from threats.</em>
+      <em><strong>Example:</strong> In modern IT environments, software plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Spam</strong>
+      <em><strong>Definition:</strong> Unsolicited or unwanted digital messages, usually emails.
+Example: Yesterday I received a lot of spam emails.</em>
+      <em><strong>Example:</strong> In modern IT environments, spam plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Spectrum</strong>
+      <em><strong>Definition:</strong> Range of electromagnetic frequencies used for wireless communication.
+Example: Wi-Fi operates on the 2.4 GHz spectrum.</em>
+      <em><strong>Example:</strong> Spectrum allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>SQL</strong>
+      <em><strong>Definition:</strong> Structured query language used for database management.
+Example: We use SQL to retrieve customer data.</em>
+      <em><strong>Example:</strong> In modern IT environments, sql plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Storage</strong>
+      <em><strong>Definition:</strong> The hardware or medium used to store digital data.
+Example: External hard drives provide additional storage.</em>
+      <em><strong>Example:</strong> In modern IT environments, storage plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Syntax</strong>
+      <em><strong>Definition:</strong> A set of rules that define the structure of programming languages.
+Example: A missing semicolon can lead to syntax errors.</em>
+      <em><strong>Example:</strong> In modern IT environments, syntax plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Token</strong>
+      <em><strong>Definition:</strong> A string used for authentication or a piece of data in processing.
+Example: Enter a token for two-factor authentication.</em>
+      <em><strong>Example:</strong> In modern IT environments, token plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Tunneling</strong>
+      <em><strong>Definition:</strong> Encapsulating one network protocol within another to create secure connections.
+Example: VPNs use tunneling to protect data.</em>
+      <em><strong>Example:</strong> In modern IT environments, tunneling plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Unbuffered</strong>
+      <em><strong>Definition:</strong> Data that is transmitted immediately without temporary storage.
+Example: Unbuffered input retrieves data as soon as it arrives.</em>
+      <em><strong>Example:</strong> In modern IT environments, unbuffered plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>URL (Uniform Resource Locator)</strong>
+      <em><strong>Definition:</strong> The web address used to access a resource on the Internet.
+Example: Google's URL is .</em>
+      <em><strong>Example:</strong> In modern IT environments, url (uniform resource locator) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>USB (Universal Serial Bus)</strong>
+      <em><strong>Definition:</strong> A standard for connecting peripherals to a computer.
+Example: I connected a flash drive via USB.</em>
+      <em><strong>Example:</strong> In modern IT environments, usb (universal serial bus) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>User Interface</strong>
+      <em><strong>Definition:</strong> The means by which a user interacts with a digital device or software.
+Example: A clean user interface makes apps easier to use.</em>
+      <em><strong>Example:</strong> In modern IT environments, user interface plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Virtualization</strong>
+      <em><strong>Definition:</strong> Creating virtual versions of hardware or resources, such as virtual machines.
+Example: Virtualization allows multiple operating systems to run on a physical machine.</em>
+      <em><strong>Example:</strong> In modern IT environments, virtualization plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>VPN (Virtual Private Network)</strong>
+      <em><strong>Definition:</strong> A service that encrypts Internet traffic and masks your IP address.
+Example: I use a VPN to browse safely on public Wi-Fi.</em>
+      <em><strong>Example:</strong> In modern IT environments, vpn (virtual private network) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Virus</strong>
+      <em><strong>Definition:</strong> Malicious software designed to infect and damage computers.
+Example: Running antivirus software can help detect viruses.</em>
+      <em><strong>Example:</strong> In modern IT environments, virus plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Webcam</strong>
+      <em><strong>Definition:</strong> A camera connected to a computer for video input.
+Example: We use a webcam for the video call.</em>
+      <em><strong>Example:</strong> In modern IT environments, webcam plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Website</strong>
+      <em><strong>Definition:</strong> A document on the Internet, usually written in HTML.
+Example: I bookmarked my favorite web page.</em>
+      <em><strong>Example:</strong> In modern IT environments, website plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi</strong>
+      <em><strong>Definition:</strong> Wireless technology for local area networking of devices based on radio signals.
+Example: My laptop connects to Wi-Fi at the coffee shop.</em>
+      <em><strong>Example:</strong> Wi-Fi allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless</strong>
+      <em><strong>Definition:</strong> Transmission of data without physical connections, usually via radio waves.
+Example: Wireless earbuds provide freedom of movement.</em>
+      <em><strong>Example:</strong> Wireless allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>XSS (Cross-Site Scripting)</strong>
+      <em><strong>Definition:</strong> A security vulnerability that allows attackers to inject malicious scripts into web pages.
+Example: The site was vulnerable to XSS attacks.</em>
+      <em><strong>Example:</strong> XSS (Cross-Site Scripting) helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>XML (eXtensible Markup Language)</strong>
+      <em><strong>Definition:</strong> A flexible text format used to share and store data.
+Example: XML files are often used to transfer data between systems.</em>
+      <em><strong>Example:</strong> In modern IT environments, xml (extensible markup language) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Day Zero</strong>
+      <em><strong>Definition:</strong> A security vulnerability unknown to the software manufacturer that is exploited by hackers.
+Example: Hackers used a zero-day vulnerability to attack.</em>
+      <em><strong>Example:</strong> Day Zero helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Kernel Panic</strong>
+      <em><strong>Definition:</strong> A system error that causes the operating system to stop working to prevent damage.
+Example: The computer displayed a kernel panic and then shut down.</em>
+      <em><strong>Example:</strong> In modern IT environments, kernel panic plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Latency</strong>
+      <em><strong>Definition:</strong> The delay before a data transfer begins after an instruction.
+Example: Low latency is crucial for online gaming.</em>
+      <em><strong>Example:</strong> In modern IT environments, latency plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Registration</strong>
+      <em><strong>Definition:</strong> A recorded history of events or activities within a system.
+Example: The server log shows attempts to access restricted files.</em>
+      <em><strong>Example:</strong> Registration is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Malwarebytes</strong>
+      <em><strong>Definition:</strong> A popular cybersecurity tool used to detect and remove malware.
+Example: I ran Malwarebytes to scan my system.</em>
+      <em><strong>Example:</strong> Malwarebytes helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Manifesto</strong>
+      <em><strong>Definition:</strong> A public statement of principles or intentions, often related to technology or development.
+Example: The open source project published a manifesto for developers.</em>
+      <em><strong>Example:</strong> In modern IT environments, manifesto plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Metadata</strong>
+      <em><strong>Definition:</strong> Data that provides information about other data.
+Example: A photo's metadata includes the date and place it was taken.</em>
+      <em><strong>Example:</strong> In modern IT environments, metadata plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Microcontroller</strong>
+      <em><strong>Definition:</strong> A compact integrated circuit designed to govern specific functions within embedded systems.
+Example: Microcontrollers are used in smart home appliances.</em>
+      <em><strong>Example:</strong> In modern IT environments, microcontroller plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Middleware</strong>
+      <em><strong>Definition:</strong> Software that connects different applications or systems to work together.
+Example: Middleware facilitates communication between the database and applications.</em>
+      <em><strong>Example:</strong> In modern IT environments, middleware plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Multitasking</strong>
+      <em><strong>Definition:</strong> The ability of an operating system to run multiple processes simultaneously.
+Example: Operating systems support multitasking to improve efficiency.</em>
+      <em><strong>Example:</strong> In modern IT environments, multitasking plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>NAT (Network Address Translation)</strong>
+      <em><strong>Definition:</strong> A methodology for reassigning IP addresses on a network.
+Example: NAT allows multiple devices to share a single public IP address.</em>
+      <em><strong>Example:</strong> In modern IT environments, nat (network address translation) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Open Source</strong>
+      <em><strong>Definition:</strong> Software with source code that is accessible and modifiable by anyone.
+Example: Linux is an open-source operating system.</em>
+      <em><strong>Example:</strong> In modern IT environments, open source plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Patch</strong>
+      <em><strong>Definition:</strong> A software update designed to fix vulnerabilities or bugs.
+Example: You need to install the latest patches for your operating system.</em>
+      <em><strong>Example:</strong> In modern IT environments, patch plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Ping</strong>
+      <em><strong>Definition:</strong> A network utility to test whether a host is reachable and measure response time.
+Example: I pinged the server to check if it was online.</em>
+      <em><strong>Example:</strong> Ping is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Protocol</strong>
+      <em><strong>Definition:</strong> A set of rules that govern communication between network devices.
+Example: HTTP is a protocol used for web browsing.</em>
+      <em><strong>Example:</strong> In modern IT environments, protocol plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Protocol Stack</strong>
+      <em><strong>Definition:</strong> A set of network protocols arranged in layers that work together.
+Example: The TCP/IP protocol stack is used on the Internet.</em>
+      <em><strong>Example:</strong> In modern IT environments, protocol stack plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Quantum Computing</strong>
+      <em><strong>Definition:</strong> A revolutionary computer paradigm that uses principles of quantum mechanics.
+Example: Quantum computing could solve complex problems much faster.</em>
+      <em><strong>Example:</strong> In modern IT environments, quantum computing plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>RAM Disk</strong>
+      <em><strong>Definition:</strong> A virtual disk created in RAM to speed up access to data.
+Example: Using a RAM disk improves application performance.</em>
+      <em><strong>Example:</strong> In modern IT environments, ram disk plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Recursion</strong>
+      <em><strong>Definition:</strong> Programming technique in which a function calls itself.
+Example: Factor calculations often use recursion.</em>
+      <em><strong>Example:</strong> In modern IT environments, recursion plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Repository</strong>
+      <em><strong>Definition:</strong> Storage location for software code, often under version control.
+Example: The development team pushed code to the GitHub repository.</em>
+      <em><strong>Example:</strong> In modern IT environments, repository plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Response Time</strong>
+      <em><strong>Definition:</strong> The time it takes for a system to respond to a request.
+Example: Faster response times improve the user experience.</em>
+      <em><strong>Example:</strong> In modern IT environments, response time plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Scalability</strong>
+      <em><strong>Definition:</strong> The ability of a system to handle a greater workload by adding resources.
+Example: The new infrastructure improved the scalability of the application.</em>
+      <em><strong>Example:</strong> In modern IT environments, scalability plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Script</strong>
+      <em><strong>Definition:</strong> A set of instructions written in a programming language that automates tasks.
+Example: You wrote a script to automate data entry.</em>
+      <em><strong>Example:</strong> In modern IT environments, script plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Traffic light</strong>
+      <em><strong>Definition:</strong> A variable used in programming to control access to a common resource, often in multitasking.
+Example: Traffic lights prevent simultaneous access to critical sections.</em>
+      <em><strong>Example:</strong> In modern IT environments, traffic light plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Server Farm</strong>
+      <em><strong>Definition:</strong> A large group of servers connected to work together to provide a service.
+Example: The data center has a huge server farm to handle web traffic.</em>
+      <em><strong>Example:</strong> Server Farm is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Session</strong>
+      <em><strong>Definition:</strong> A period of interaction between a user and a system, often for authentication purposes.
+Example: You must log back in after the session expires.</em>
+      <em><strong>Example:</strong> In modern IT environments, session plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Shading Language</strong>
+      <em><strong>Definition:</strong> Programming languages used to write shaders for graphics rendering.
+Example: The game developer customized shaders using GLSL.</em>
+      <em><strong>Example:</strong> In modern IT environments, shading language plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Shell</strong>
+      <em><strong>Definition:</strong> Command-line interface used to interact with the operating system.
+Example: The shell allows you to execute commands and scripts.</em>
+      <em><strong>Example:</strong> In modern IT environments, shell plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>SDK (Software Development Kit)</strong>
+      <em><strong>Definition:</strong> A collection of tools and libraries for developing software for specific platforms.
+Example: The Android SDK helps developers build apps.</em>
+      <em><strong>Example:</strong> In modern IT environments, sdk (software development kit) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Traffic light (duplicate, so it is skipped)</strong>
+      <em><strong>Definition:</strong> </em>
+      <em><strong>Example:</strong> In modern IT environments, traffic light (duplicate, so it is skipped) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Signage</strong>
+      <em><strong>Definition:</strong> Exchange of information between processes or devices to coordinate actions.
+Example: The operating system uses signaling to notify events to processes.</em>
+      <em><strong>Example:</strong> In modern IT environments, signage plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Syntax Highlighting</strong>
+      <em><strong>Definition:</strong> Coloring code syntax to improve readability.
+Example: The code editor has syntax highlighting for better clarity.</em>
+      <em><strong>Example:</strong> In modern IT environments, syntax highlighting plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>TFTP (Trivial File Transfer Protocol)</strong>
+      <em><strong>Definition:</strong> A simple protocol for transferring files over a network.
+Example: TFTP is used to boot network devices.</em>
+      <em><strong>Example:</strong> In modern IT environments, tftp (trivial file transfer protocol) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Tokenization</strong>
+      <em><strong>Definition:</strong> Convert a string of characters into tokens for easy processing.
+Example: The compiler tokenizes the source code before analyzing it.</em>
+      <em><strong>Example:</strong> In modern IT environments, tokenization plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Transcoder</strong>
+      <em><strong>Definition:</strong> A device or program that converts data from one format to another.
+Example: Video transcoding shifted 4K video to a lower resolution.</em>
+      <em><strong>Example:</strong> In modern IT environments, transcoder plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Trace Route</strong>
+      <em><strong>Definition:</strong> A network diagnostic tool that tracks the path taken by data packets to reach a destination.
+Example: I used traceroute to diagnose network issues.</em>
+      <em><strong>Example:</strong> In modern IT environments, trace route plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Performance</strong>
+      <em><strong>Definition:</strong> The amount of data processed in a given period of time.
+Example: Higher throughput means faster data transfer.</em>
+      <em><strong>Example:</strong> In modern IT environments, performance plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Token Ring Network</strong>
+      <em><strong>Definition:</strong> A network protocol in which devices connect in a ring and tokens are passed to each other to control access.
+Example: Token ring networks are less common today.</em>
+      <em><strong>Example:</strong> In modern IT environments, token ring network plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Tree Structure</strong>
+      <em><strong>Definition:</strong> A hierarchical data structure that resembles a tree, with nodes and branches.
+Example: File systems typically use a tree structure.</em>
+      <em><strong>Example:</strong> In modern IT environments, tree structure plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Troubleshooting</strong>
+      <em><strong>Definition:</strong> Diagnostic and troubleshooting process.
+Example: Network troubleshooting involves checking cables and settings.</em>
+      <em><strong>Example:</strong> In modern IT environments, troubleshooting plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Unicode</strong>
+      <em><strong>Definition:</strong> A standard for the consistent encoding of text characters in different languages.
+Example: Unicode supports emojis and international characters.</em>
+      <em><strong>Example:</strong> In modern IT environments, unicode plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>User Agent</strong>
+      <em><strong>Definition:</strong> Software that acts on behalf of a user, such as a web browser.
+Example: The server detects its user agent and adjusts the content.</em>
+      <em><strong>Example:</strong> User Agent is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Puerto USB</strong>
+      <em><strong>Definition:</strong> A computer's interface for connecting peripheral devices via USB.
+Example: I connected a keyboard through the USB port.</em>
+      <em><strong>Example:</strong> In modern IT environments, puerto usb plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>URL Encoding</strong>
+      <em><strong>Definition:</strong> Convert the characters in URLs into a format that can be transmitted over the Internet.
+Example: Spaces are encoded as %20 in URLs.</em>
+      <em><strong>Example:</strong> In modern IT environments, url encoding plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Utility Software</strong>
+      <em><strong>Definition:</strong> Programs that help analyze, configure, optimize, or maintain a computer.
+Example: Disk cleanup tools are utility software.</em>
+      <em><strong>Example:</strong> In modern IT environments, utility software plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Virtual Machine</strong>
+      <em><strong>Definition:</strong> Software-based emulation of a physical computer system.
+Example: Developers run multiple virtual machines on a physical server.</em>
+      <em><strong>Example:</strong> Virtual Machine is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Crawler</strong>
+      <em><strong>Definition:</strong> An automated program that browses websites to index or collect data.
+Example: Search engines use web crawlers to update their indexes.</em>
+      <em><strong>Example:</strong> In modern IT environments, web crawler plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server</strong>
+      <em><strong>Definition:</strong> A server that delivers web pages to browsers that request it.
+Example: The Apache web server hosts many websites.</em>
+      <em><strong>Example:</strong> Web Server is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>White Hat</strong>
+      <em><strong>Definition:</strong> Ethical hacker who uses skills to improve security.
+Example: White hat hackers help find vulnerabilities to fix.</em>
+      <em><strong>Example:</strong> White Hat helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Widget</strong>
+      <em><strong>Definition:</strong> A small application or component in a GUI that performs a specific function.
+Example: The weather widget displays the forecast on the desktop.</em>
+      <em><strong>Example:</strong> In modern IT environments, widget plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Access Point</strong>
+      <em><strong>Definition:</strong> A physical place where people can access the internet via Wi-Fi.
+Example: Coffee shops often offer free Wi-Fi hotspots.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi access point plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Local Area Network (WLAN)</strong>
+      <em><strong>Definition:</strong> A wireless network within a limited area, connecting devices wirelessly.
+Example: My home WLAN connects all my devices.</em>
+      <em><strong>Example:</strong> Wireless Local Area Network (WLAN) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Router</strong>
+      <em><strong>Definition:</strong> A device that provides wireless access to a network and the Internet.
+Example: The Wi-Fi router transmits the network signal.</em>
+      <em><strong>Example:</strong> Wi-Fi Router allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Workflow</strong>
+      <em><strong>Definition:</strong> Sequence of processes through which work passes from start to finish.
+Example: Workflow automation improves efficiency.</em>
+      <em><strong>Example:</strong> In modern IT environments, workflow plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Widget Toolkit</strong>
+      <em><strong>Definition:</strong> A library used to create GUI components.
+Example: GTK is a popular widget toolkit for Linux.</em>
+      <em><strong>Example:</strong> In modern IT environments, widget toolkit plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Application</strong>
+      <em><strong>Definition:</strong> A software program that is accessed through a web browser.
+Example: Google Docs is a web application.</em>
+      <em><strong>Example:</strong> In modern IT environments, web application plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting</strong>
+      <em><strong>Definition:</strong> A service that stores websites and makes them accessible on the Internet.
+Example: They purchased web hosting for their new site.</em>
+      <em><strong>Example:</strong> Using reliable web hosting ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Development</strong>
+      <em><strong>Definition:</strong> The process of creating websites and applications for the Internet.
+Example: It specializes in web development using HTML, CSS, and JavaScript.</em>
+      <em><strong>Example:</strong> In modern IT environments, web development plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Design</strong>
+      <em><strong>Definition:</strong> The art of creating the visual and usability aspects of a website.
+Example: Good web design improves the user experience.</em>
+      <em><strong>Example:</strong> In modern IT environments, web design plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Socket web</strong>
+      <em><strong>Definition:</strong> A protocol for full-duplex communication between client and server over a single connection.
+Example: WebSockets enables real-time chat apps.</em>
+      <em><strong>Example:</strong> Socket web is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wide Area Network (WAN)</strong>
+      <em><strong>Definition:</strong> A network that covers a large geographic area, often connecting multiple LANs.
+Example: The Internet is the largest example of WAN.</em>
+      <em><strong>Example:</strong> In modern IT environments, wide area network (wan) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wrapping</strong>
+      <em><strong>Definition:</strong> Software that provides a new interface around existing code or hardware.
+Example: A wrapper can allow old software to run on new systems.</em>
+      <em><strong>Example:</strong> In modern IT environments, wrapping plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Widget (duplicate, so it jumps)</strong>
+      <em><strong>Definition:</strong> </em>
+      <em><strong>Example:</strong> In modern IT environments, widget (duplicate, so it jumps) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Workflow Automation</strong>
+      <em><strong>Definition:</strong> Use of software to automatically perform repetitive tasks.
+Example: Automating email responses reduces manual work.</em>
+      <em><strong>Example:</strong> In modern IT environments, workflow automation plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Worm</strong>
+      <em><strong>Definition:</strong> A type of malware that replicates itself to spread through networks.
+Example: The ILOVEYOU worm caused widespread damage.</em>
+      <em><strong>Example:</strong> In modern IT environments, worm plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WordPress</strong>
+      <em><strong>Definition:</strong> An open-source content management system for website creation.
+Example: Many bloggers use WordPress for their sites.</em>
+      <em><strong>Example:</strong> In modern IT environments, wordpress plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Protected Access (WPA)</strong>
+      <em><strong>Definition:</strong> Security protocol to protect wireless networks.
+Example: WPA helps prevent unauthorized access.</em>
+      <em><strong>Example:</strong> Wi-Fi Protected Access (WPA) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WAN Link</strong>
+      <em><strong>Definition:</strong> The connection between two or more wide-area networks.
+Example: The company's VPN uses a secure WAN link.</em>
+      <em><strong>Example:</strong> In modern IT environments, wan link plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web API</strong>
+      <em><strong>Definition:</strong> An API that enables interaction with web-based services.
+Example: Google Maps provides a web API for developers.</em>
+      <em><strong>Example:</strong> Securing your web api is essential to avoid exposing endpoints to malicious users.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Word Processing Software</strong>
+      <em><strong>Definition:</strong> Program used to create, edit, and format text documents.
+Example: Microsoft Word is a popular word processing software.</em>
+      <em><strong>Example:</strong> In modern IT environments, word processing software plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Extender</strong>
+      <em><strong>Definition:</strong> A device that amplifies Wi-Fi signals to extend coverage.
+Example: I installed a Wi-Fi extender to reach the backyard.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi extender plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Cache</strong>
+      <em><strong>Definition:</strong> Temporary storage of web pages to improve load times and reduce bandwidth.
+Example: Your browser's web cache speeds up page loading.</em>
+      <em><strong>Example:</strong> In modern IT environments, web cache plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Proxy web</strong>
+      <em><strong>Definition:</strong> An intermediary server that obtains data on behalf of a client, often for anonymity or filtering.
+Example: Using a web proxy can hide your IP address.</em>
+      <em><strong>Example:</strong> Proxy web is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi antenna</strong>
+      <em><strong>Definition:</strong> A hardware component that transmits and receives wireless signals.
+Example: The Wi-Fi antenna increases the signal strength on the router.</em>
+      <em><strong>Example:</strong> Wi-Fi antenna allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Workflow Management</strong>
+      <em><strong>Definition:</strong> Coordination and control of processes and tasks in an organization.
+Example: Flowcharts help visualize workflow management.</em>
+      <em><strong>Example:</strong> In modern IT environments, workflow management plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Registration</strong>
+      <em><strong>Definition:</strong> Files that record server activity, such as access times and source addresses.
+Example: Analyzing server logs helps identify security threats.</em>
+      <em><strong>Example:</strong> Web Server Registration is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web scraping</strong>
+      <em><strong>Definition:</strong> Automated data extraction from websites.
+Example: Web scraping is used to collect product prices.</em>
+      <em><strong>Example:</strong> Securing your web scraping is essential to avoid exposing endpoints to malicious users.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Crawl Bot</strong>
+      <em><strong>Definition:</strong> An automated program that systematically navigates websites to index or collect data.
+Example: Google's web crawl bot indexes new pages daily.</em>
+      <em><strong>Example:</strong> In modern IT environments, web crawl bot plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Portal</strong>
+      <em><strong>Definition:</strong> A website that provides a variety of resources and services, often customized to users.
+Example: Many companies create a web portal for employee access.</em>
+      <em><strong>Example:</strong> In modern IT environments, web portal plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web-based</strong>
+      <em><strong>Definition:</strong> It is accessed or operated through a web browser.
+Example: The app is web-based, so you don't need to install anything.</em>
+      <em><strong>Example:</strong> In modern IT environments, web-based plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Sensor Network</strong>
+      <em><strong>Definition:</strong> A network of spatially dispersed sensors that monitor conditions and communicate wirelessly.
+Example: WSNs are used for environmental monitoring.</em>
+      <em><strong>Example:</strong> Wireless Sensor Network allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Module</strong>
+      <em><strong>Definition:</strong> A small hardware component that allows devices to connect to Wi-Fi networks.
+Example: The microcontroller includes a Wi-Fi module for IoT projects.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi module plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Analytics</strong>
+      <em><strong>Definition:</strong> The collection and analysis of website data to understand user behavior.
+Example: Web analytics shows which pages are the most visited.</em>
+      <em><strong>Example:</strong> In modern IT environments, web analytics plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Provider</strong>
+      <em><strong>Definition:</strong> A company that offers space and services to host websites.
+Example: They chose a reliable web host.</em>
+      <em><strong>Example:</strong> Using reliable web hosting provider ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Site Map</strong>
+      <em><strong>Definition:</strong> An interactive map embedded in a website, often powered by mapping services.
+Example: The site has a web map that shows store locations.</em>
+      <em><strong>Example:</strong> In modern IT environments, site map plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Webmail</strong>
+      <em><strong>Definition:</strong> Access to email through a web browser rather than a client application.
+Example: Gmail is a popular webmail service.</em>
+      <em><strong>Example:</strong> In modern IT environments, webmail plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Security</strong>
+      <em><strong>Definition:</strong> Measures to protect wireless networks from unauthorized access, such as WPA or encryption.
+Example: Changing the default password improves Wi-Fi security.</em>
+      <em><strong>Example:</strong> Wi-Fi Security allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wide Area Network (WAN)</strong>
+      <em><strong>Definition:</strong> A network that spans large geographic areas, often over the Internet.
+Example: The global Internet is the largest WAN.</em>
+      <em><strong>Example:</strong> In modern IT environments, wide area network (wan) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Fidelity (Wi-Fi)</strong>
+      <em><strong>Definition:</strong> The standard for wireless local area networks, which allows devices to connect wirelessly.
+Example: My laptop connects to Wi-Fi easily.</em>
+      <em><strong>Example:</strong> Wireless Fidelity (Wi-Fi) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Syndication</strong>
+      <em><strong>Definition:</strong> The use of web feeds (RSS, Atom) to publish frequently updated content.
+Example: I subscribe to web syndication feeds to receive news.</em>
+      <em><strong>Example:</strong> In modern IT environments, web syndication plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Service</strong>
+      <em><strong>Definition:</strong> A service that provides storage space and access for websites on the Internet.
+Example: They signed up for a web hosting service.</em>
+      <em><strong>Example:</strong> Using reliable web hosting service ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web-based application</strong>
+      <em><strong>Definition:</strong> An application accessed through a web browser, not installed locally.
+Example: Dropbox is a web-based file-sharing application.</em>
+      <em><strong>Example:</strong> In modern IT environments, web-based application plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Browser Engine</strong>
+      <em><strong>Definition:</strong> A software component that renders web pages in browsers, such as Blink or Gecko.
+Example: The engine determines how web content is displayed.</em>
+      <em><strong>Example:</strong> In modern IT environments, web browser engine plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Connection</strong>
+      <em><strong>Definition:</strong> A wireless link between a device and a network.
+Example: My Wi-Fi connection is very fast today.</em>
+      <em><strong>Example:</strong> Wi-Fi Connection allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WEP (Wired Equivalent Privacy)</strong>
+      <em><strong>Definition:</strong> An obsolete wireless security protocol, now replaced by WPA.
+Example: WEP is no longer secure and should be avoided.</em>
+      <em><strong>Example:</strong> WEP (Wired Equivalent Privacy) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Whitelist</strong>
+      <em><strong>Definition:</strong> A list of approved items or permitted access addresses.
+Example: The firewall uses a whitelist to allow trusted IP addresses.</em>
+      <em><strong>Example:</strong> In modern IT environments, whitelist plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Cache</strong>
+      <em><strong>Definition:</strong> Temporary storage of web pages to improve load times and reduce bandwidth.
+Example: Your browser's web cache speeds up page loading.</em>
+      <em><strong>Example:</strong> In modern IT environments, web cache plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Proxy web</strong>
+      <em><strong>Definition:</strong> An intermediary server that obtains data on behalf of a client, often for anonymity or filtering.
+Example: Using a web proxy can hide your IP address.</em>
+      <em><strong>Example:</strong> Proxy web is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi antenna</strong>
+      <em><strong>Definition:</strong> A hardware component that transmits and receives wireless signals.
+Example: The Wi-Fi antenna increases the signal strength on the router.</em>
+      <em><strong>Example:</strong> Wi-Fi antenna allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Workflow Management</strong>
+      <em><strong>Definition:</strong> Coordination and control of processes and tasks in an organization.
+Example: Flowcharts help visualize workflow management.</em>
+      <em><strong>Example:</strong> In modern IT environments, workflow management plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Registration</strong>
+      <em><strong>Definition:</strong> Files that record server activity, such as access times and source addresses.
+Example: Analyzing server logs helps identify security threats.</em>
+      <em><strong>Example:</strong> Web Server Registration is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web scraping</strong>
+      <em><strong>Definition:</strong> Automated data extraction from websites.
+Example: Web scraping is used to collect product prices.</em>
+      <em><strong>Example:</strong> Securing your web scraping is essential to avoid exposing endpoints to malicious users.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Crawl Bot</strong>
+      <em><strong>Definition:</strong> An automated program that systematically navigates websites to index or collect data.
+Example: Google's web crawl bot indexes new pages daily.</em>
+      <em><strong>Example:</strong> In modern IT environments, web crawl bot plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Portal</strong>
+      <em><strong>Definition:</strong> A website that provides a variety of resources and services, often customized to users.
+Example: Many companies create a web portal for employee access.</em>
+      <em><strong>Example:</strong> In modern IT environments, web portal plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web-based</strong>
+      <em><strong>Definition:</strong> It is accessed or operated through a web browser.
+Example: The app is web-based, so you don't need to install anything.</em>
+      <em><strong>Example:</strong> In modern IT environments, web-based plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Sensor Network</strong>
+      <em><strong>Definition:</strong> A network of spatially dispersed sensors that monitor conditions and communicate wirelessly.
+Example: WSNs are used for environmental monitoring.</em>
+      <em><strong>Example:</strong> Wireless Sensor Network allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Module</strong>
+      <em><strong>Definition:</strong> A small hardware component that allows devices to connect to Wi-Fi networks.
+Example: The microcontroller includes a Wi-Fi module for IoT projects.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi module plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Analytics</strong>
+      <em><strong>Definition:</strong> The collection and analysis of website data to understand user behavior.
+Example: Web analytics shows which pages are the most visited.</em>
+      <em><strong>Example:</strong> In modern IT environments, web analytics plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Provider</strong>
+      <em><strong>Definition:</strong> A company that offers space and services to host websites.
+Example: They chose a reliable web host.</em>
+      <em><strong>Example:</strong> Using reliable web hosting provider ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Site Map</strong>
+      <em><strong>Definition:</strong> An interactive map embedded in a website, often powered by mapping services.
+Example: The site has a web map that shows store locations.</em>
+      <em><strong>Example:</strong> In modern IT environments, site map plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Webmail</strong>
+      <em><strong>Definition:</strong> Access to email through a web browser rather than a client application.
+Example: Gmail is a popular webmail service.</em>
+      <em><strong>Example:</strong> In modern IT environments, webmail plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Security</strong>
+      <em><strong>Definition:</strong> Measures to protect wireless networks from unauthorized access, such as WPA or encryption.
+Example: Changing the default password improves Wi-Fi security.</em>
+      <em><strong>Example:</strong> Wi-Fi Security allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wide Area Network (WAN)</strong>
+      <em><strong>Definition:</strong> A network that spans large geographic areas, often over the Internet.
+Example: The global Internet is the largest WAN.</em>
+      <em><strong>Example:</strong> In modern IT environments, wide area network (wan) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Fidelity (Wi-Fi)</strong>
+      <em><strong>Definition:</strong> The standard for wireless local area networks, which allows devices to connect wirelessly.
+Example: My laptop connects to Wi-Fi easily.</em>
+      <em><strong>Example:</strong> Wireless Fidelity (Wi-Fi) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Syndication</strong>
+      <em><strong>Definition:</strong> The use of web feeds (RSS, Atom) to publish frequently updated content.
+Example: I subscribe to web syndication feeds to receive news.</em>
+      <em><strong>Example:</strong> In modern IT environments, web syndication plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Service</strong>
+      <em><strong>Definition:</strong> A service that provides storage space and access for websites on the Internet.
+Example: They signed up for a web hosting service.</em>
+      <em><strong>Example:</strong> Using reliable web hosting service ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web-based application</strong>
+      <em><strong>Definition:</strong> An application accessed through a web browser, not installed locally.
+Example: Dropbox is a web-based file-sharing application.</em>
+      <em><strong>Example:</strong> In modern IT environments, web-based application plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Browser Engine</strong>
+      <em><strong>Definition:</strong> A software component that renders web pages in browsers, such as Blink or Gecko.
+Example: The engine determines how web content is displayed.</em>
+      <em><strong>Example:</strong> In modern IT environments, web browser engine plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Connection</strong>
+      <em><strong>Definition:</strong> A wireless link between a device and a network.
+Example: My Wi-Fi connection is very fast today.</em>
+      <em><strong>Example:</strong> Wi-Fi Connection allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WEP (Wired Equivalent Privacy)</strong>
+      <em><strong>Definition:</strong> An obsolete wireless security protocol, now replaced by WPA.
+Example: WEP is no longer secure and should be avoided.</em>
+      <em><strong>Example:</strong> WEP (Wired Equivalent Privacy) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Whitelist</strong>
+      <em><strong>Definition:</strong> </em>
+      <em><strong>Example:</strong> In modern IT environments, whitelist plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Application Firewall (WAF)</strong>
+      <em><strong>Definition:</strong> A security system that monitors and filters HTTP traffic to protect web applications. Example: The WAF blocks SQL injection attacks.</em>
+      <em><strong>Example:</strong> Web Application Firewall (WAF) helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Access Point Login</strong>
+      <em><strong>Definition:</strong> The authentication process for accessing a Wi-Fi access point, often through a login page. Example: I entered my credentials on the Wi-Fi hotspot login page.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi access point login plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WYSIWYG (What You See Is What You Get)</strong>
+      <em><strong>Definition:</strong> A user interface that displays content as it will appear in its final form during editing. Example: The WYSIWYG editor makes web design easy.</em>
+      <em><strong>Example:</strong> In modern IT environments, wysiwyg (what you see is what you get) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WebRTC</strong>
+      <em><strong>Definition:</strong> Technology that enables real-time communication (audio, video) directly between browsers. Example: WebRTC facilitates video calls without additional plugins.</em>
+      <em><strong>Example:</strong> In modern IT environments, webrtc plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Evangelist</strong>
+      <em><strong>Definition:</strong> A person who promotes and advocates for web technologies. Example: The developer is a web evangelist for HTML5.</em>
+      <em><strong>Example:</strong> In modern IT environments, web evangelist plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Partitioning</strong>
+      <em><strong>Definition:</strong> Dividing web content into segments for better management or security. Example: Web partitioning helps isolate sensitive data.</em>
+      <em><strong>Example:</strong> Web Partitioning helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Widespread Network Attack</strong>
+      <em><strong>Definition:</strong> A large-scale cyberattack that affects many systems or users. Example: The attack caused widespread network outages.</em>
+      <em><strong>Example:</strong> In modern IT environments, widespread network attack plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Signal Booster</strong>
+      <em><strong>Definition:</strong> A device that amplifies Wi-Fi signals to improve coverage. Example: Installing a Wi-Fi signal booster improved my internet speed.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi signal booster plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Accessibility</strong>
+      <em><strong>Definition:</strong> Design of websites that can be used by people with disabilities. Example: Web accessibility includes options such as text-to-speech.</em>
+      <em><strong>Example:</strong> In modern IT environments, web accessibility plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Portfolio</strong>
+      <em><strong>Definition:</strong> An online collection of a person's work, often used by creative professionals. Example: The artist showed her work in a web portfolio.</em>
+      <em><strong>Example:</strong> In modern IT environments, web portfolio plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Plan</strong>
+      <em><strong>Definition:</strong> A package of services and resources provided by a hosting provider. Example: They purchased a basic web hosting plan.</em>
+      <em><strong>Example:</strong> Using reliable web hosting plan ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Access Point (WAP)</strong>
+      <em><strong>Definition:</strong> Hardware that allows wireless devices to connect to a wired network. Example: The WAP extends Wi-Fi coverage in the office.</em>
+      <em><strong>Example:</strong> Wireless Access Point (WAP) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Interference</strong>
+      <em><strong>Definition:</strong> Interruption of wireless signals caused by other devices or physical obstacles. Example: Microwave ovens can cause Wi-Fi interference.</em>
+      <em><strong>Example:</strong> Wi-Fi Interference allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Virtualization</strong>
+      <em><strong>Definition:</strong> Run multiple virtual servers on a single physical server to optimize resources. Example: Web server virtualization helps save costs.</em>
+      <em><strong>Example:</strong> Web Server Virtualization is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web-based email client</strong>
+      <em><strong>Definition:</strong> An email application accessed through a web browser. Example: Gmail is a popular web-based email client.</em>
+      <em><strong>Example:</strong> In modern IT environments, web-based email client plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi mesh network</strong>
+      <em><strong>Definition:</strong> A network topology that uses multiple access points to provide uninterrupted coverage. Example: A Wi-Fi mesh network covers my entire home.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi mesh network plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WEP crack</strong>
+      <em><strong>Definition:</strong> Unauthorized hacking on a WEP-protected Wi-Fi network. Example: WEP crack techniques are obsolete due to insecurity.</em>
+      <em><strong>Example:</strong> WEP crack helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Metrics</strong>
+      <em><strong>Definition:</strong> Data collected to analyze website traffic and user behavior. Example: Web metrics show an increase in visitors after the ad campaign.</em>
+      <em><strong>Example:</strong> In modern IT environments, web metrics plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Communication Protocol</strong>
+      <em><strong>Definition:</strong> A set of rules for the transmission of data over wireless networks. Example: Wi-Fi uses the IEEE 802.11 protocol.</em>
+      <em><strong>Example:</strong> Wireless Communication Protocol allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Service</strong>
+      <em><strong>Definition:</strong> A standardized way for applications to interact over a network. Example: Weather data is accessed through web services.</em>
+      <em><strong>Example:</strong> In modern IT environments, web service plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Write Cache</strong>
+      <em><strong>Definition:</strong> Temporary storage for data that will be written to disk later. Example: The write cache improves system performance.</em>
+      <em><strong>Example:</strong> In modern IT environments, write cache plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi 6</strong>
+      <em><strong>Definition:</strong> The latest Wi-Fi standard that delivers faster speeds and better performance. Example: Wi-Fi 6 supports more devices connected simultaneously.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi 6 plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>World Wide Web (WWW)</strong>
+      <em><strong>Definition:</strong> The system of interconnected web pages accessible via the Internet. Example: The WWW is one of the main services of the Internet.</em>
+      <em><strong>Example:</strong> In modern IT environments, world wide web (www) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wavelength</strong>
+      <em><strong>Definition:</strong> The distance between successive peaks of a wave, relevant in wireless signals. Example: Different wavelengths are used for various wireless standards.</em>
+      <em><strong>Example:</strong> Wavelength allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Maintenance</strong>
+      <em><strong>Definition:</strong> A list of approved items or permitted access addresses.
+Example: The firewall uses a whitelist to allow trusted IP addresses.</em>
+      <em><strong>Example:</strong> In modern IT environments, web maintenance plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wifi Access Point Management</strong>
+      <em><strong>Definition:</strong> The process of setting up and maintaining Wi-Fi access points for public or private use.
+Example: The coffee shop uses access point management to ensure security.</em>
+      <em><strong>Example:</strong> Wifi Access Point Management allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Analytics Tools</strong>
+      <em><strong>Definition:</strong> Software used to collect and analyze website visitor data.
+Example: Google Analytics are popular web analytics tools.</em>
+      <em><strong>Example:</strong> In modern IT environments, web analytics tools plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Device</strong>
+      <em><strong>Definition:</strong> Any hardware device capable of connecting to a Wi-Fi network.
+Example: My smart thermostat is a Wi-Fi device.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi device plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Archive Website</strong>
+      <em><strong>Definition:</strong> Save web content for reference or future preservation.
+Example: Internet Archive performs web archiving.</em>
+      <em><strong>Example:</strong> In modern IT environments, archive website plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Website Optimization</strong>
+      <em><strong>Definition:</strong> To improve website elements to improve performance and ranking.
+Example: Image compression is part of website optimization.</em>
+      <em><strong>Example:</strong> In modern IT environments, website optimization plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Licenses</strong>
+      <em><strong>Definition:</strong> The legal permission to use the content or web technology.
+Example: The site requires web licenses for media assets.</em>
+      <em><strong>Example:</strong> In modern IT environments, web licenses plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Charging</strong>
+      <em><strong>Definition:</strong> Technology that charges devices wirelessly, through electromagnetic fields.
+Example: Many smartphones now support wireless charging.</em>
+      <em><strong>Example:</strong> Wireless Charging allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Network Security</strong>
+      <em><strong>Definition:</strong> Measures to protect wireless networks from unauthorized access or attack.
+Example: Using WPA3 improves wireless network security.</em>
+      <em><strong>Example:</strong> Wireless Network Security allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Control Panel</strong>
+      <em><strong>Definition:</strong> Interface used to manage hosting services, domains, and websites.
+Example: cPanel is a popular web hosting control panel.</em>
+      <em><strong>Example:</strong> Using reliable web hosting control panel ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Development Framework</strong>
+      <em><strong>Definition:</strong> A platform that provides structure and tools for website creation.
+Example: React is a popular web development framework.</em>
+      <em><strong>Example:</strong> In modern IT environments, web development framework plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Booster</strong>
+      <em><strong>Definition:</strong> A device that amplifies Wi-Fi signal strength to extend coverage.
+Example: Installing a Wi-Fi booster improved my signal in the garage.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi booster plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Interface Design</strong>
+      <em><strong>Definition:</strong> Design of the graphical and functional aspects of the interface of a web application.
+Example: A good web interface design improves the user experience.</em>
+      <em><strong>Example:</strong> In modern IT environments, web interface design plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Password Management</strong>
+      <em><strong>Definition:</strong> Use of tools or practices to securely store and manage website passwords.
+Example: Password managers simplify web password management.</em>
+      <em><strong>Example:</strong> In modern IT environments, web password management plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wavelength Modulation</strong>
+      <em><strong>Definition:</strong> Method of encoding data in carrier waves by varying the wavelength.
+Example: It is used in advanced wireless communication systems.</em>
+      <em><strong>Example:</strong> Wavelength Modulation allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Access Security</strong>
+      <em><strong>Definition:</strong> Techniques for protecting Wi-Fi connections from unauthorized access.
+Example: Enabling MAC address filtering improves the security of Wi-Fi access.</em>
+      <em><strong>Example:</strong> Wi-Fi Access Security helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Traffic Analysis</strong>
+      <em><strong>Definition:</strong> The process of examining the flow of visitors and data on a website.
+Example: Web traffic analysis helps identify popular content.</em>
+      <em><strong>Example:</strong> Web Traffic Analysis tools help identify usage patterns and optimize website structure.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WLAN Security Protocols</strong>
+      <em><strong>Definition:</strong> Security standards such as WPA2 to protect wireless local networks.
+Example: WPA2 is commonly used in home WLANs.</em>
+      <em><strong>Example:</strong> WLAN Security Protocols allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Content Management System (CMS)</strong>
+      <em><strong>Definition:</strong> Software that allows users to create, manage, and modify website content.
+Example: WordPress is a popular CMS.</em>
+      <em><strong>Example:</strong> In modern IT environments, web content management system (cms) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Mesh Topology</strong>
+      <em><strong>Definition:</strong> A network structure in which devices are directly and dynamically connected to each other.
+Example: The mesh topology provides resilient Wi-Fi coverage.</em>
+      <em><strong>Example:</strong> In modern IT environments, wireless mesh topology plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Uptime</strong>
+      <em><strong>Definition:</strong> The amount of time a website remains accessible online.
+Example: High uptime is crucial for reliable web hosting.</em>
+      <em><strong>Example:</strong> Using reliable web hosting uptime ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WPS (Wi-Fi Protected Settings)</strong>
+      <em><strong>Definition:</strong> A network security standard for easy configuration of Wi-Fi connections.
+Example: WPS allows you to connect devices at the touch of a button.</em>
+      <em><strong>Example:</strong> WPS (Wi-Fi Protected Settings) helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Content Filtering</strong>
+      <em><strong>Definition:</strong> The process of controlling what content is accessible on the Internet.
+Example: Schools set up web content filtering for student safety.</em>
+      <em><strong>Example:</strong> In modern IT environments, web content filtering plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Network Adapter</strong>
+      <em><strong>Definition:</strong> A hardware component that allows a device to connect to Wi-Fi networks.
+Example: My desktop has a Wi-Fi network adapter installed.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi network adapter plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Webpage Loading Speed</strong>
+      <em><strong>Definition:</strong> The time it takes for a web page to be fully displayed in a browser.
+Example: Resource compression improves the loading speed of the web page.</em>
+      <em><strong>Example:</strong> In modern IT environments, webpage loading speed plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WEP Security Vulnerability</strong>
+      <em><strong>Definition:</strong> The inherent weaknesses of WEP encryption, which lead to insecurity.
+Example: The  WEP security vulnerability makes it unsuitable for today's networks.</em>
+      <em><strong>Example:</strong> WEP Security Vulnerability helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Provider</strong>
+      <em><strong>Definition:</strong> A company that provides storage and access to websites on the Internet.
+Example: The hosting provider has a good reputation for its support.</em>
+      <em><strong>Example:</strong> Using reliable web hosting provider ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Performance Optimization</strong>
+      <em><strong>Definition:</strong> A set of techniques to improve the speed and efficiency of a website.
+Example: Performance optimization reduces load time.</em>
+      <em><strong>Example:</strong> In modern IT environments, web performance optimization plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Channel</strong>
+      <em><strong>Definition:</strong> Specific frequency used to transmit wireless data.
+Example: The device selects a less congested wireless channel.</em>
+      <em><strong>Example:</strong> Wireless Channel allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Control Panel</strong>
+      <em><strong>Definition:</strong> Graphical interface for managing web hosting resources and configurations.
+Example: cPanel is a widely used control panel.</em>
+      <em><strong>Example:</strong> Using reliable web hosting control panel ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Broadband network</strong>
+      <em><strong>Definition:</strong> A network that supports high data transmission rates, such as fiber optics.
+Example: Network broadband allows for 4K streaming.</em>
+      <em><strong>Example:</strong> In modern IT environments, broadband network plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Authentication</strong>
+      <em><strong>Definition:</strong> The process of verifying the identity of devices to access a wireless network.
+Example: WPA2 authentication secures the Wi-Fi network.</em>
+      <em><strong>Example:</strong> Wi-Fi Authentication allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Browser Security</strong>
+      <em><strong>Definition:</strong> Measures to protect the user and the system while browsing the Internet.
+Example: Using HTTPS and antivirus improves browser security.</em>
+      <em><strong>Example:</strong> Web Browser Security helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Bandwidth</strong>
+      <em><strong>Definition:</strong> The amount of data that can be transferred from a website in a given period.
+Example: Bandwidth influences website performance.</em>
+      <em><strong>Example:</strong> Using reliable web hosting bandwidth ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Widespread malware infection</strong>
+      <em><strong>Definition:</strong> A malware infection affects many systems extensively.
+Example: A generalized infection caused disruptions.</em>
+      <em><strong>Example:</strong> In modern IT environments, widespread malware infection plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Password</strong>
+      <em><strong>Definition:</strong> A key that protects a wireless network from unauthorized access.
+Example: I changed my Wi-Fi password for security.</em>
+      <em><strong>Example:</strong> Wi-Fi Password allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Code Optimization</strong>
+      <em><strong>Definition:</strong> Improving and cleaning code to improve efficiency and speed on the web.
+Example: Code optimization reduces load time.</em>
+      <em><strong>Example:</strong> In modern IT environments, web code optimization plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Bandwidth Management</strong>
+      <em><strong>Definition:</strong> Control and bandwidth allocation of wireless connections.
+Example: Bandwidth management avoids congestion.</em>
+      <em><strong>Example:</strong> Wireless Bandwidth Management allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Compliance with web regulations</strong>
+      <em><strong>Definition:</strong> Adhere to the specifications and rules of web development.
+Example: Compliance with standards ensures compatibility and accessibility.</em>
+      <em><strong>Example:</strong> In modern IT environments, compliance with web regulations plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Content Delivery Network (CDN)</strong>
+      <em><strong>Definition:</strong> A network of servers that distribute content to accelerate global access.
+Example: Using a CDN improves site speed.</em>
+      <em><strong>Example:</strong> Web Content Delivery Network (CDN) is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Access Point Security</strong>
+      <em><strong>Definition:</strong> Measures to protect a public Wi-Fi access network.
+Example: We recommend using VPNs on public Wi-Fi hotspots.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi access point security plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Migration</strong>
+      <em><strong>Definition:</strong> Transferring a website from one provider to another.
+Example: The migration was carried out without noticeable drops.</em>
+      <em><strong>Example:</strong> Using reliable web hosting migration ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WAP (Wireless Access Point)</strong>
+      <em><strong>Definition:</strong> A device that allows wireless connection to a wired network.
+Example: The WAP extends the Wi-Fi coverage of the building.</em>
+      <em><strong>Example:</strong> WAP (Wireless Access Point) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Responsiveness</strong>
+      <em><strong>Definition:</strong> Ability of a site to adapt to different devices and screen sizes.
+Example: Responsive design improves the mobile experience.</em>
+      <em><strong>Example:</strong> In modern IT environments, web responsiveness plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Network Topology</strong>
+      <em><strong>Definition:</strong> The physical or logical configuration of a wireless network, such as a lock or mesh.
+Example: The mesh topology provides greater resiliency.</em>
+      <em><strong>Example:</strong> Wireless Network Topology allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web accessibility standards</strong>
+      <em><strong>Definition:</strong> Standards to make sites accessible to people with disabilities.
+Example: WCAG compliance improves accessibility.</em>
+      <em><strong>Example:</strong> In modern IT environments, web accessibility standards plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WEP Security Protocol</strong>
+      <em><strong>Definition:</strong> Outdated and vulnerable wireless security protocol.
+Example: WEP is no longer recommended due to its security flaws.</em>
+      <em><strong>Example:</strong> WEP Security Protocol allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Traffic Management</strong>
+      <em><strong>Definition:</strong> Management of the amount and type of traffic on a network or website.
+Example: Management helps avoid congestion and falls.</em>
+      <em><strong>Example:</strong> In modern IT environments, web traffic management plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WState (wireless status)</strong>
+      <em><strong>Definition:</strong> Wireless connection status on devices and networks.
+Example: WState status indicates whether you are online or not.</em>
+      <em><strong>Example:</strong> WState (wireless status) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Backend Development</strong>
+      <em><strong>Definition:</strong> Programming and logic that control the operation of the server and databases.
+Example: The backend uses Python and Node.js.</em>
+      <em><strong>Example:</strong> Web Backend Development is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Mesh Extenders</strong>
+      <em><strong>Definition:</strong> Devices that extend the coverage of a mesh network.
+Example: Installing extenders in each room improves the signal.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi mesh extenders plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Uptime Monitoring</strong>
+      <em><strong>Definition:</strong> Monitoring how long a website stays online and accessible.
+Example: Uptime monitoring helps detect crashes quickly.</em>
+      <em><strong>Example:</strong> Using reliable web hosting uptime monitoring ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Structuring of web pages</strong>
+      <em><strong>Definition:</strong> Logical and visual organization of the content of a web page.
+Example: Proper structuring improves navigation.</em>
+      <em><strong>Example:</strong> In modern IT environments, structuring of web pages plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Frequency Bands</strong>
+      <em><strong>Definition:</strong> The different frequencies at which Wi-Fi networks operate, such as 2.4 GHz and 5 GHz.
+Example: The 5 GHz band offers less interference.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi frequency bands plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Syndication of web content</strong>
+      <em><strong>Definition:</strong> Distribution of content across different platforms using feeds.
+Example: Syndication allows you to follow news in an RSS reader.</em>
+      <em><strong>Example:</strong> In modern IT environments, syndication of web content plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Certification</strong>
+      <em><strong>Definition:</strong> Official recognition of products that comply with Wi-Fi standards.
+Example: The router is Wi-Fi 5 certified.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi certification plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Push Notifications</strong>
+      <em><strong>Definition:</strong> Messages sent by a website directly to users' devices.
+Example: I received a push notification about an offer.</em>
+      <em><strong>Example:</strong> In modern IT environments, web push notifications plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Access Security Protocols</strong>
+      <em><strong>Definition:</strong> Sets of rules to secure wireless connections, such as WPA3.
+Example: WPA3 offers higher security than WPA2.</em>
+      <em><strong>Example:</strong> Wireless Access Security Protocols allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Security</strong>
+      <em><strong>Definition:</strong> Measures to protect websites against attacks and vulnerabilities.
+Example: Implementing SSL is part of hosting security.</em>
+      <em><strong>Example:</strong> Web Hosting Security helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Application Security Testing</strong>
+      <em><strong>Definition:</strong> Assessment to identify vulnerabilities in web applications.
+Example: Performing security tests improves protection.</em>
+      <em><strong>Example:</strong> Web Application Security Testing helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Configuration</strong>
+      <em><strong>Definition:</strong> Settings and parameters on the server that controls the delivery of web content.
+Example: The right settings ensure performance and security.</em>
+      <em><strong>Example:</strong> Web Server Configuration is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Channel Selection</strong>
+      <em><strong>Definition:</strong> Choose the least congested wireless channel to improve the signal.
+Example: The device automatically chooses the best channel to reduce interference.</em>
+      <em><strong>Example:</strong> Wi-Fi Channel Selection allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Page Caching</strong>
+      <em><strong>Definition:</strong> Temporary storage of web pages to speed up subsequent access.
+Example: Cache reduces load times.</em>
+      <em><strong>Example:</strong> In modern IT environments, web page caching plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Device Management</strong>
+      <em><strong>Definition:</strong> Management and configuration of wireless devices on the network.
+Example: Administration allows you to control access and settings.</em>
+      <em><strong>Example:</strong> Wireless Device Management allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Login Security</strong>
+      <em><strong>Definition:</strong> Measures to protect access to accounts and private areas on the web.
+Example: Two-factor authentication increases security.</em>
+      <em><strong>Example:</strong> Web Login Security helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Editor web WYSIWYG</strong>
+      <em><strong>Definition:</strong> Visual editor that allows you to design web pages without the need for programming.
+Example: Dreamweaver is a WYSIWYG editor.</em>
+      <em><strong>Example:</strong> In modern IT environments, editor web wysiwyg plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Optimizing Web Content for SEO</strong>
+      <em><strong>Definition:</strong> Improving web content to improve its search engine ranking.
+Example: Using keywords and tags helps with SEO.</em>
+      <em><strong>Example:</strong> In modern IT environments, optimizing web content for seo plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Site Inspection</strong>
+      <em><strong>Definition:</strong> Site assessment to plan and optimize a wireless network.
+Example: The survey helps determine the best location of access points.</em>
+      <em><strong>Example:</strong> Wireless Site Inspection allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Load Balancing</strong>
+      <em><strong>Definition:</strong> Distribution of traffic across multiple servers to avoid overloads.
+Example: Load balancing keeps the website available during traffic spikes.</em>
+      <em><strong>Example:</strong> Web Server Load Balancing is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Troubleshooting Wi-Fi Connection</strong>
+      <em><strong>Definition:</strong> Diagnosing and troubleshooting wireless connection issues.
+Example: Restarting the router may resolve connection errors.</em>
+      <em><strong>Example:</strong> Troubleshooting Wi-Fi Connection allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Content Management Systems (CMS)</strong>
+      <em><strong>Definition:</strong> Platforms to create and manage web content in a simple way.
+Example: Joomla and Drupal are popular CMSs.</em>
+      <em><strong>Example:</strong> In modern IT environments, web content management systems (cms) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Signal Interference Mitigation</strong>
+      <em><strong>Definition:</strong> Techniques to reduce interference in wireless signals.
+Example: Changing the channel helps mitigate interference.</em>
+      <em><strong>Example:</strong> Wireless Signal Interference Mitigation allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Security Policies</strong>
+      <em><strong>Definition:</strong> Sets of rules to protect the web server from attacks.
+Example: Configuring firewalls is part of security policies.</em>
+      <em><strong>Example:</strong> Web Server Security Policies is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WEP vs. WPA Security</strong>
+      <em><strong>Definition:</strong> Comparison between WEP (vulnerable) and WPA (more secure) in Wi-Fi protection.
+Example: It is recommended to use WPA3 instead of WEP.</em>
+      <em><strong>Example:</strong> In modern IT environments, wep vs. wpa security plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Application Firewall (WAF) Implementation</strong>
+      <em><strong>Definition:</strong> Implementation of specialized firewall to protect web applications.
+Example: WAF implementation blocks common attacks.</em>
+      <em><strong>Example:</strong> In modern IT environments, web application firewall (waf) implementation plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Hosting Options</strong>
+      <em><strong>Definition:</strong> Different ways to host a web server, such as cloud or dedicated.
+Example: The cloud hosting option offers scalability.</em>
+      <em><strong>Example:</strong> Web Server Hosting Options is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Security Incident Response</strong>
+      <em><strong>Definition:</strong> Procedures for managing and resolving web security incidents.
+Example: The team implemented an incident response plan.</em>
+      <em><strong>Example:</strong> Web Security Incident Response helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless encryption standards</strong>
+      <em><strong>Definition:</strong> Standards for data encryption on wireless networks, such as WPA2 and WPA3.
+Example: WPA3 provides stronger encryption than WPA2.</em>
+      <em><strong>Example:</strong> Wireless encryption standards allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web infrastructure</strong>
+      <em><strong>Definition:</strong> Set of technological components that support the operation of websites.
+Example: Infrastructure includes servers, networks, and databases.</em>
+      <em><strong>Example:</strong> Web infrastructure is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Traffic Analysis Tools</strong>
+      <em><strong>Definition:</strong> Programs to analyze the behavior of visitors on a website.
+Example: Traffic analysis identified the most popular pages.</em>
+      <em><strong>Example:</strong> Web Traffic Analysis Tools tools help identify usage patterns and optimize website structure.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Signal Expansion</strong>
+      <em><strong>Definition:</strong> Methods and devices used to extend Wi-Fi coverage.
+Example: Extenders aid in signal expansion.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi signal expansion plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting SLA (Service Level Agreement)</strong>
+      <em><strong>Definition:</strong> Agreement that defines the quality and availability of the hosting service.
+Example: The SLA guarantees 99.9% uptime.</em>
+      <em><strong>Example:</strong> Using reliable web hosting sla (service level agreement) ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Device Protocols</strong>
+      <em><strong>Definition:</strong> Rules and standards governing communication on wireless devices.
+Example: Wi-Fi 6 protocols improve efficiency and speed.</em>
+      <em><strong>Example:</strong> Wireless Device Protocols allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Content Personalization</strong>
+      <em><strong>Definition:</strong> Adjusting content according to user preferences or behavior.
+Example: Personalization increases engagement on the web.</em>
+      <em><strong>Example:</strong> In modern IT environments, web content personalization plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Virtualization Technology</strong>
+      <em><strong>Definition:</strong> Using virtualization to create multiple servers in one.
+Example: Virtualization reduces costs and increases flexibility.</em>
+      <em><strong>Example:</strong> Web Server Virtualization Technology is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Spectrum Management</strong>
+      <em><strong>Definition:</strong> Organization and control of the use of the radio spectrum for Wi-Fi.
+Example: Management avoids interference between nearby networks.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi spectrum management plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Accessibility Testing Tools</strong>
+      <em><strong>Definition:</strong> Software to verify which sites meet accessibility standards.
+Example: Tools like WAVE help with testing.</em>
+      <em><strong>Example:</strong> In modern IT environments, web accessibility testing tools plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Deployment of wireless mesh networks</strong>
+      <em><strong>Definition:</strong> Installation of mesh networks to cover large areas with Wi-Fi.
+Example: The mesh network improved coverage on campus.</em>
+      <em><strong>Example:</strong> In modern IT environments, deployment of wireless mesh networks plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Log Analysis Techniques</strong>
+      <em><strong>Definition:</strong> Methods for interpreting server logs and obtaining information.
+Example: The analysis revealed attack patterns.</em>
+      <em><strong>Example:</strong> Web Server Log Analysis Techniques is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Signal Quality Metrics</strong>
+      <em><strong>Definition:</strong> Indicators that measure wireless signal quality, such as RSSI and SNR.
+Example: Improving SNR levels increases speed.</em>
+      <em><strong>Example:</strong> Wi-Fi Signal Quality Metrics allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Cost Estimate</strong>
+      <em><strong>Definition:</strong> Calculation of the expected cost of web hosting services.
+Example: The estimate included resources, domain, and support.</em>
+      <em><strong>Example:</strong> Using reliable web hosting cost estimate ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Intrusion Detection System (WIDS)</strong>
+      <em><strong>Definition:</strong> A system that monitors and detects unauthorized activity on wireless networks.
+Example: The WIDS alerted about suspicious access.</em>
+      <em><strong>Example:</strong> Wireless Intrusion Detection System (WIDS) allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Tuning Web Server Performance</strong>
+      <em><strong>Definition:</strong> Adjusting settings to improve the speed of a web server.
+Example: PHP optimization increased response speed.</em>
+      <em><strong>Example:</strong> Tuning Web Server Performance is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>A/B testing of the website</strong>
+      <em><strong>Definition:</strong> Comparing two versions of a page to determine which one works best.
+Example: Version B got more conversions.</em>
+      <em><strong>Example:</strong> In modern IT environments, a/b testing of the website plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Device Troubleshooting Tools</strong>
+      <em><strong>Definition:</strong> Programs or methods for diagnosing problems in wireless devices.
+Example: I used inSSIDer to detect congested channels.</em>
+      <em><strong>Example:</strong> Wi-Fi Device Troubleshooting Tools allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web API Security Best Practices</strong>
+      <em><strong>Definition:</strong> Recommendations for protecting web APIs from threats.
+Example: Implementing OAuth is a best practice.</em>
+      <em><strong>Example:</strong> Securing your web api security best practices is essential to avoid exposing endpoints to malicious users.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Network Coverage Planning</strong>
+      <em><strong>Definition:</strong> Design and planning to ensure adequate wireless coverage.
+Example: The plan considered obstacles and interferences.</em>
+      <em><strong>Example:</strong> Wireless Network Coverage Planning allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Scalability Solutions</strong>
+      <em><strong>Definition:</strong> Techniques for expanding resources and growing with a website.
+Example: Using cloud servers to scale automatically.</em>
+      <em><strong>Example:</strong> Web Hosting Scalability Solutions is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WAP (Wireless Application Protocol)</strong>
+      <em><strong>Definition:</strong> Technology to access the internet on older mobile devices.
+Example: WAP has been replaced by modern technologies.</em>
+      <em><strong>Example:</strong> In modern IT environments, wap (wireless application protocol) plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Process of updating the content of the website</strong>
+      <em><strong>Definition:</strong> </em>
+      <em><strong>Example:</strong> In modern IT environments, process of updating the content of the website plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Backup Solutions</strong>
+      <em><strong>Definition:</strong> Systems and services for creating website backups.
+Example: They implemented automatic backup solutions for protection.</em>
+      <em><strong>Example:</strong> Using reliable web hosting backup solutions ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Device Firmware</strong>
+      <em><strong>Definition:</strong> Internal software that controls the operation of Wi-Fi devices.
+Example: Updating firmware improves security and performance.</em>
+      <em><strong>Example:</strong> Wi-Fi Device Firmware helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Security Patches</strong>
+      <em><strong>Definition:</strong> Updates that fix vulnerabilities in web servers.
+Example: Installing patches protects against attacks.</em>
+      <em><strong>Example:</strong> Web Server Security Patches is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Limitation of web hosting bandwidth</strong>
+      <em><strong>Definition:</strong> Limit bandwidth usage to control resources.
+Example: Limit enabled to avoid congestion.</em>
+      <em><strong>Example:</strong> Using reliable limitation of web hosting bandwidth ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Channel Interference Mitigation</strong>
+      <em><strong>Definition:</strong> Techniques for reducing interference on wireless channels.
+Example: Changing channels helped reduce interference.</em>
+      <em><strong>Example:</strong> Wireless Channel Interference Mitigation allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web-based dashboards</strong>
+      <em><strong>Definition:</strong> Graphical interfaces that display real-time performance data.
+Example: The control panel allows you to monitor server activity.</em>
+      <em><strong>Example:</strong> Web-based dashboards is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WEP Security Vulnerability Exploits</strong>
+      <em><strong>Definition:</strong> Techniques that exploit WEP weaknesses to access networks.
+Example: Hackers can gain access through WEP exploits.</em>
+      <em><strong>Example:</strong> In modern IT environments, wep security vulnerability exploits plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Security Best Practices</strong>
+      <em><strong>Definition:</strong> A set of recommendations for securing sites and users.
+Example: Implementing HTTPS and encryption are best practices.</em>
+      <em><strong>Example:</strong> In modern IT environments, web security best practices plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Network Segmentation</strong>
+      <em><strong>Definition:</strong> Dividing a wireless network into subnets to improve security and performance.
+Example: Separating the guest network increases security.</em>
+      <em><strong>Example:</strong> Wi-Fi Network Segmentation allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Hosting Account Management</strong>
+      <em><strong>Definition:</strong> Managing hosting accounts, features, and resources.
+Example: Manage customer accounts in the dashboard.</em>
+      <em><strong>Example:</strong> Using reliable web hosting account management ensures faster content delivery and minimal downtime.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Spectrum Analysis Tools</strong>
+      <em><strong>Definition:</strong> Programs to inspect how wireless spectrum is used.
+Example: Tools that detect congested channels.</em>
+      <em><strong>Example:</strong> Wireless Spectrum Analysis Tools allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Load Balancing Techniques</strong>
+      <em><strong>Definition:</strong> Methods for distributing traffic across servers to optimize resources.
+Example: Balancing algorithms increase availability.</em>
+      <em><strong>Example:</strong> Web Server Load Balancing Techniques is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Channel Bandwidth Options</strong>
+      <em><strong>Definition:</strong> Bandwidth variants on Wi-Fi channels, such as 20 MHz, 40 MHz.
+Example: Higher bandwidth improves speed.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi channel bandwidth options plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Performance Monitoring Tools</strong>
+      <em><strong>Definition:</strong> Software to track and analyze website performance.
+Example: Google PageSpeed Insights helps optimize.</em>
+      <em><strong>Example:</strong> In modern IT environments, web performance monitoring tools plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>WEP Cracking Tools</strong>
+      <em><strong>Definition:</strong> Programs used to breach WEP security.
+Example: It is important to stop using WEP because of its insecurity.</em>
+      <em><strong>Example:</strong> WEP Cracking Tools helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Reducing Web Content Delivery Latency</strong>
+      <em><strong>Definition:</strong> Techniques to decrease the time in which content reaches the user.
+Example: Using CDN reduces latency.</em>
+      <em><strong>Example:</strong> In modern IT environments, reducing web content delivery latency plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wireless Security Authentication Protocols</strong>
+      <em><strong>Definition:</strong> Standards for verifying identity in wireless networks, such as WPA3.
+Example: WPA3 offers enhanced authentication.</em>
+      <em><strong>Example:</strong> Wireless Security Authentication Protocols allows users to connect to the internet without the need for Ethernet cables.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Server Virtualization Management</strong>
+      <em><strong>Definition:</strong> Control and configuration of virtual servers in a physical environment.
+Example: Management facilitates scalability.</em>
+      <em><strong>Example:</strong> Web Server Virtualization Management is crucial for maintaining consistent uptime in large-scale web applications.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Wi-Fi Access Point Bridge</strong>
+      <em><strong>Definition:</strong> To connect multiple networks so that they work as one.
+Example: The bridge allows for expanded coverage.</em>
+      <em><strong>Example:</strong> In modern IT environments, wi-fi access point bridge plays a vital role in system efficiency.</em>
+    </div>
+    
+    <div class="term">
+      <strong>Web Security Incident Analysis</strong>
+      <em><strong>Definition:</strong> Assessing security events to understand and mitigate attacks.
+Example: Incident analysis helps prevent future threats.</em>
+      <em><strong>Example:</strong> Web Security Incident Analysis helps prevent unauthorized access and protects sensitive user data.</em>
+    </div>
+    
+  </div>
+
+  <script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      const terms = document.querySelectorAll('.term');
+      terms.forEach(term => {
+        const text = term.textContent.toLowerCase();
+        term.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    });
+
+    document.getElementById('termSelect').addEventListener('change', function () {
+      const selected = this.value.toLowerCase();
+      const terms = document.querySelectorAll('.term');
+      for (let term of terms) {
+        if (term.textContent.toLowerCase().includes(selected)) {
+          term.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          term.style.border = '2px solid #00ffff';
+          setTimeout(() => {
+            term.style.border = '1px solid #39ff14';
+          }, 2000);
+          break;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
